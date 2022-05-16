@@ -12,7 +12,7 @@ public class ModFuels {
     }
 
     public static void registerModFuels(){
-        FirstFabricMod.LOGGER.info("Register ModFuels for " + FirstFabricMod.MOD_ID);
+        FirstFabricMod.LOGGER.info("Registering ModFuels for " + FirstFabricMod.MOD_ID);
         registerFuel(ModItems.FRAGMENT_OF_AMETHYST, 2000);
     }
 }

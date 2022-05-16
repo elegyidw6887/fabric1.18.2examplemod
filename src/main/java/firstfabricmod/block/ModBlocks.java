@@ -4,8 +4,10 @@ import firstfabricmod.FirstFabricMod;
 import firstfabricmod.block.customBlock.AmethystLampBlock;
 import firstfabricmod.block.customBlock.GrapeVineBlock;
 import firstfabricmod.block.customBlock.ModFluidBlock;
+import firstfabricmod.block.customBlock.ModSaplingBlock;
 import firstfabricmod.fluid.ModFluids;
 import firstfabricmod.util.ModItemGroup;
+import firstfabricmod.world.feature.tree.JacarandaSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -52,12 +54,10 @@ public class ModBlocks {
     // 木板方块
     public static final Block JACARANDA_PLANKS = registerBlock("jacaranda_planks",
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).strength(4.0F).requiresTool()), ModItemGroup.LOSTsMOD);
-    // 树叶方块
-    public static final Block JACARANDA_LEAVES = registerBlock("jacaranda_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).nonOpaque()), ModItemGroup.LOSTsMOD);
     // 树苗方块
     public static final Block JACARANDA_SAPLING = registerBlock("jacaranda_sapling",
-            new Block(FabricBlockSettings.copy(Blocks.OAK_SAPLING).strength(4.0F).nonOpaque()), ModItemGroup.LOSTsMOD);
+            new ModSaplingBlock(new JacarandaSaplingGenerator(),
+                    FabricBlockSettings.copy(Blocks.OAK_SAPLING).strength(4.0F).nonOpaque()), ModItemGroup.LOSTsMOD);
 
     private static Block registerBlock(String name, Block block, ItemGroup itemGroup){ // 一个返回值是Block的方法，用于方块对象的注册
         // 调用类中方块相关物品对象注册方法，同时做到方块与方块相关物品对象的注册
@@ -75,6 +75,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks(){
-        FirstFabricMod.LOGGER.info("Register ModBlocks for " + FirstFabricMod.MOD_ID);
+        FirstFabricMod.LOGGER.info("Registering ModBlocks for " + FirstFabricMod.MOD_ID);
     }
 }

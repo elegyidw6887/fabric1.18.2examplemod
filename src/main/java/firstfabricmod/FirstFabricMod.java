@@ -12,6 +12,8 @@ import firstfabricmod.item.ModPotions;
 import firstfabricmod.util.ModCustomTrades;
 import firstfabricmod.util.ModFlammableBlocks;
 import firstfabricmod.util.ModStrippables;
+import firstfabricmod.world.feature.ModConfiguredFeatures;
+import firstfabricmod.world.gen.ModWorldGen;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +25,8 @@ public class FirstFabricMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+		ModConfiguredFeatures.registerModConfiguredFeatures();
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
@@ -36,6 +40,8 @@ public class FirstFabricMod implements ModInitializer {
 
 		ModFlammableBlocks.registerModFlammableBlocks();
 		ModStrippables.registerModStrippables();
+
+		ModWorldGen.generateModWorldGen();
 
 		CubeEntity.r_CubeEntity();
 

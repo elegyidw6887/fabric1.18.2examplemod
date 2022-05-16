@@ -16,6 +16,6 @@ public class ModEffects {
     }
 
     public static void registerModEffects(){
-        FirstFabricMod.LOGGER.info("Register ModEffects for " + FirstFabricMod.MOD_ID);
+        FirstFabricMod.LOGGER.info("Registering ModEffects for " + FirstFabricMod.MOD_ID);
     }
 }

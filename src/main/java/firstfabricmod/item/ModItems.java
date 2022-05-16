@@ -83,6 +83,6 @@ public class ModItems {
     }
 
     public static void registerModItems(){
-        FirstFabricMod.LOGGER.info("Register ModItem for " + FirstFabricMod.MOD_ID);
+        FirstFabricMod.LOGGER.info("Registering ModItems for " + FirstFabricMod.MOD_ID);
     }
 }

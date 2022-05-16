@@ -16,6 +16,6 @@ public class ModEnchantments {
     }
 
     public static void registerModEnchantments(){
-        FirstFabricMod.LOGGER.info("Register ModEnchantment for " + FirstFabricMod.MOD_ID);
+        FirstFabricMod.LOGGER.info("Registering ModEnchantments for " + FirstFabricMod.MOD_ID);
     }
 }

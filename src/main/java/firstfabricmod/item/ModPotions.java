@@ -23,7 +23,7 @@ public class ModPotions {
     }
 
     public static void registerModPotions(){
-        FirstFabricMod.LOGGER.info("Register ModPotions for " + FirstFabricMod.MOD_ID);
+        FirstFabricMod.LOGGER.info("Registering ModPotions for " + FirstFabricMod.MOD_ID);
         registerPotionRecipes();
     }
 }
