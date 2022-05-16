@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "firstfabricmod:amethyst_block",
+    "firstfabricmod:amethyst_ore",
+    "firstfabricmod:deepslate_amethyst_ore"
+  ]
+}

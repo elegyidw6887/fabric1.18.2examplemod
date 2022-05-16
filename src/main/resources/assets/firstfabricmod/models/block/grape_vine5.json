@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "firstfabricmod:block/grape_vine5"
+  }
+}

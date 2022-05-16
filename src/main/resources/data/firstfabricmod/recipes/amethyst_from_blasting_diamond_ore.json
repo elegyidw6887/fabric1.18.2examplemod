@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "diamond",
+  "ingredient": {
+    "item": "firstfabricmod:amethyst_ore"
+  },
+  "result": "firstfabricmod:amethyst",
+  "experience": 1.0,
+  "cookingtime": 100
+}

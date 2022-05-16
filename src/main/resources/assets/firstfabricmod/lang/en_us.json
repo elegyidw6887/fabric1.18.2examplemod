@@ -1,0 +1,18 @@
+{
+  "itemGroup.firstfabricmod.group1": "LOSTsMOD",
+  "item.firstfabricmod.amethyst": "Amethyst",
+  "item.firstfabricmod.amethyst.tooltip": "§5A shiny amethyst",
+  "block.firstfabricmod.amethyst_block": "Block of Amethyst",
+  "block.firstfabricmod.amethyst_ore": "Amethyst Ore",
+  "block.firstfabricmod.deepslate_amethyst_ore": "Deepslate Amethyst Ore",
+  "item.firstfabricmod.blood_bucket": "Blood Bucket",
+  "item.firstfabricmod.cube_entity_egg": "Cube Entity Egg",
+  "enchantment.firstfabricmod.freeze": "Freeze",
+
+  "item.firstfabricmod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.firstfabricmod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl(CC0)",
+
+  "item.minecraft.potion.effect.freeze_potion": "Freeze Potion",
+  "item.minecraft.splash_potion.effect.freeze_potion": "Splash Potion of Freeze",
+  "item.minecraft.lingering_potion.effect.freeze_potion": "Lingering Potion of Freeze"
+}
