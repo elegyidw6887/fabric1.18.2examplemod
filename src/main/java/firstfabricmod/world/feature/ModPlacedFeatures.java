@@ -1,10 +1,12 @@
 package firstfabricmod.world.feature;
 
 import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
@@ -21,4 +23,10 @@ public class ModPlacedFeatures {
                     SquarePlacementModifier.of(),
                     PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
                     BiomePlacementModifier.of());
+
+    public static final RegistryEntry<PlacedFeature> AMETHYST_ORE_PLACED =
+            PlacedFeatures.register("amethyst_ore_placed",
+                    ModConfiguredFeatures.AMETHYST_ORE,
+                    ModOreFeatures.modifiersWithCount(7,
+                            HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(-88), YOffset.aboveBottom(80))));
 }

@@ -38,6 +38,15 @@ public class ModConfiguredFeatures {
                     ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LILAC_FLOWER)))));
 
+    // List -> CF
+    public static final List<OreFeatureConfig.Target> OVERWORLD_AMETHYST_ORES = List.of(
+            OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, ModBlocks.AMETHYST_ORE.getDefaultState()),
+            OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_AMETHYST_ORE.getDefaultState()));
+
+    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> AMETHYST_ORE =
+            ConfiguredFeatures.register("amethyst_ore", Feature.ORE,
+                    new OreFeatureConfig(OVERWORLD_AMETHYST_ORES, 9));
+
 
 
     public static void registerModConfiguredFeatures(){
