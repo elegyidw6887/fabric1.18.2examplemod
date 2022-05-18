@@ -2,11 +2,11 @@
 
 ## Setup
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+仓库原版项目来源为[fabric wiki page](https://fabricmc.net/wiki/tutorial:setup)
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+此仓库在CC0许可证下随意使用
 
 ## Note
 
