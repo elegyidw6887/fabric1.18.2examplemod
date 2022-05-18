@@ -2,7 +2,7 @@
 
 ## Setup
 
-仓库原版项目来源为[fabric wiki page](https://fabricmc.net/wiki/tutorial:setup)
+仓库原版项目来源为[Fabric Wiki](https://fabricmc.net/wiki/tutorial:setup)
 
 ## License
 
