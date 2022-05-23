@@ -44,6 +44,8 @@ public class FirstFabricModClient implements ClientModInitializer {
                         0xDC143C));
         // 树苗的渲染
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.JACARANDA_SAPLING, RenderLayer.getCutout());
+        // 注入工作台的渲染
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.INJECTION_BENCH, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(CubeEntity.CUBE_ENTITY, CubeEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, CubeEntityModel::getTexturedModelData);

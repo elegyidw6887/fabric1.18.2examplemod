@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "firstfabricmod:block/injection_bench" },
+    "facing=east": { "model": "firstfabricmod:block/injection_bench", "y": 90 },
+    "facing=south": { "model": "firstfabricmod:block/injection_bench", "y": 180 },
+    "facing=west": { "model": "firstfabricmod:block/injection_bench", "y": 270 }
+  }
+}

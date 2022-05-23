@@ -1,10 +1,7 @@
 package firstfabricmod.block;
 
 import firstfabricmod.FirstFabricMod;
-import firstfabricmod.block.customBlock.AmethystLampBlock;
-import firstfabricmod.block.customBlock.GrapeVineBlock;
-import firstfabricmod.block.customBlock.ModFluidBlock;
-import firstfabricmod.block.customBlock.ModSaplingBlock;
+import firstfabricmod.block.customBlock.*;
 import firstfabricmod.fluid.ModFluids;
 import firstfabricmod.util.ModItemGroup;
 import firstfabricmod.world.feature.tree.JacarandaSaplingGenerator;
@@ -58,6 +55,9 @@ public class ModBlocks {
     public static final Block JACARANDA_SAPLING = registerBlock("jacaranda_sapling",
             new ModSaplingBlock(new JacarandaSaplingGenerator(),
                     FabricBlockSettings.copy(Blocks.OAK_SAPLING).strength(4.0F).nonOpaque()), ModItemGroup.LOSTsMOD);
+    // 注入工作台方块
+    public static final Block INJECTION_BENCH = registerBlock("injection_bench",
+            new InjectionBenchBlock(FabricBlockSettings.of(Material.METAL).requiresTool().nonOpaque()), ModItemGroup.LOSTsMOD);
 
     private static Block registerBlock(String name, Block block, ItemGroup itemGroup){ // 一个返回值是Block的方法，用于方块对象的注册
         // 调用类中方块相关物品对象注册方法，同时做到方块与方块相关物品对象的注册
