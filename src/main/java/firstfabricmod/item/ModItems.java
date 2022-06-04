@@ -31,11 +31,9 @@ public class ModItems {
                     tooltip.add(new TranslatableText("item.firstfabricmod.amethyst.tooltip"));
                 }
             });
-
     // 紫水晶碎片燃料物品
     public static final Item FRAGMENT_OF_AMETHYST = registerItem("fragment_of_amethyst",
             new Item(new FabricItemSettings().group(ModItemGroup.LOSTsMOD).maxCount(64)));
-
     // 紫水晶工具
     public static final Item AMETHYST_SHOVEL = registerItem("amethyst_shovel",
             new ShovelItem(ModToolMaterials.AMETHYST, 1, -3F, new FabricItemSettings().group(ModItemGroup.LOSTsMOD)));
@@ -71,11 +69,11 @@ public class ModItems {
     // 血桶物品
     public static final Item BLOOD_BUCKET = registerItem("blood_bucket",
             new BucketItem(ModFluids.STILL_BLOOD, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).group(ModItemGroup.LOSTsMOD)));
-
     // 实体刷怪蛋物品
     public static final Item CUBE_ENTITY_EGG = registerItem("cube_entity_egg",
             new SpawnEggItem(CubeEntity.CUBE_ENTITY,
                     12895428, 11382189, new Item.Settings().group(ModItemGroup.LOSTsMOD)));
+
 
 
     private static Item registerItem(String name, Item item){ // 注册物品

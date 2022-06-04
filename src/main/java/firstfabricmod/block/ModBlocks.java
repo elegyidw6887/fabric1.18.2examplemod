@@ -8,12 +8,19 @@ import firstfabricmod.world.feature.tree.JacarandaSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
+
+import java.util.List;
 
 public class ModBlocks {
 
@@ -59,22 +66,40 @@ public class ModBlocks {
     public static final Block INJECTION_BENCH = registerBlock("injection_bench",
             new InjectionBenchBlock(FabricBlockSettings.of(Material.METAL).requiresTool().nonOpaque()), ModItemGroup.LOSTsMOD);
 
-    private static Block registerBlock(String name, Block block, ItemGroup itemGroup){ // 一个返回值是Block的方法，用于方块对象的注册
+
+
+
+    private static Block registerBlock(String name, Block block, ItemGroup itemGroup){ // 注册方块的同时注册一个对应的物品
         // 调用类中方块相关物品对象注册方法，同时做到方块与方块相关物品对象的注册
         registerBlockItem(name, block, itemGroup);
         return Registry.register(Registry.BLOCK, new Identifier(FirstFabricMod.MOD_ID, name), block);
     }
 
-    private static Block registerBlockWithoutBlockItem(String name, Block block){ // 一个同时不会进行物品注册的类
+    private static Block registerBlockWithTooltip(String name, Block block, ItemGroup itemGroup, String tooltips){ // 注册方块的同时注册一个有物品提示的对应物品
+        // 调用类中方块相关物品对象注册方法，同时做到方块与方块相关物品对象的注册
+        registerBlockItemWithTooltip(name, block, itemGroup, tooltips);
         return Registry.register(Registry.BLOCK, new Identifier(FirstFabricMod.MOD_ID, name), block);
     }
 
-    private static void registerBlockItem(String name, Block block, ItemGroup itemGroup){ // 一个返回值是Item的方法，用于方块相关物品对象的注册
+    private static Block registerBlockWithoutBlockItem(String name, Block block){ // 注册方块的同时不进行物品的注册
+        return Registry.register(Registry.BLOCK, new Identifier(FirstFabricMod.MOD_ID, name), block);
+    }
+
+    private static void registerBlockItem(String name, Block block, ItemGroup itemGroup){ // 注册与方块对应的物品
         Registry.register(Registry.ITEM, new Identifier(FirstFabricMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(itemGroup)));
     }
 
-    public static void registerModBlocks(){
+    private static void registerBlockItemWithTooltip(String name, Block block, ItemGroup itemGroup, String tooltips){ // 注册与方块对应并且有物品提示的物品
+        Registry.register(Registry.ITEM, new Identifier(FirstFabricMod.MOD_ID, name),
+                new BlockItem(block, new FabricItemSettings().group(itemGroup)){
+                    public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
+                        tooltip.add(new TranslatableText(tooltips));
+                    }
+                });
+    }
+
+    public static void registerModBlocks(){ // 外部调用方法，提供给主类调用
         FirstFabricMod.LOGGER.info("Registering ModBlocks for " + FirstFabricMod.MOD_ID);
     }
 }
