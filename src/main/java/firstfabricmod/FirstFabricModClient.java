@@ -5,6 +5,8 @@ import firstfabricmod.entity.CubeEntity.CubeEntity;
 import firstfabricmod.entity.CubeEntity.CubeEntityModel;
 import firstfabricmod.entity.CubeEntity.CubeEntityRenderer;
 import firstfabricmod.fluid.ModFluids;
+import firstfabricmod.screen.InjectionBenchScreen;
+import firstfabricmod.screen.ModScreenHandlers;
 import firstfabricmod.util.ModModelPredicateProvider;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -12,6 +14,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
@@ -46,6 +49,8 @@ public class FirstFabricModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.JACARANDA_SAPLING, RenderLayer.getCutout());
         // 注入工作台的渲染
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.INJECTION_BENCH, RenderLayer.getCutout());
+        // 注入工作台gui渲染
+        ScreenRegistry.register(ModScreenHandlers.INJECTION_BENCH_SCREEN_HANDLER, InjectionBenchScreen::new);
 
         EntityRendererRegistry.register(CubeEntity.CUBE_ENTITY, CubeEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, CubeEntityModel::getTexturedModelData);

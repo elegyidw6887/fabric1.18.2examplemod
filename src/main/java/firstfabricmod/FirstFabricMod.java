@@ -4,6 +4,7 @@ import firstfabricmod.block.ModBlocks;
 import firstfabricmod.effect.ModEffects;
 import firstfabricmod.enchantment.ModEnchantments;
 import firstfabricmod.entity.CubeEntity.CubeEntity;
+import firstfabricmod.entity.ModBlockEntities;
 import firstfabricmod.fluid.ModFluids;
 import firstfabricmod.item.ModFuels;
 import firstfabricmod.item.ModItems;
@@ -40,6 +41,8 @@ public class FirstFabricMod implements ModInitializer {
 
 		ModFlammableBlocks.registerModFlammableBlocks();
 		ModStrippables.registerModStrippables();
+
+		ModBlockEntities.registerBlockEntities();
 
 		ModWorldGen.generateModWorldGen();
 

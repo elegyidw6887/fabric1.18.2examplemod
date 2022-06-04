@@ -14,7 +14,8 @@ public class ModBlockEntities {
 
     public static void registerBlockEntities(){
 
-        INJECTION_BENCH = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(FirstFabricMod.MOD_ID, "injection_bench"),
+        INJECTION_BENCH = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                new Identifier(FirstFabricMod.MOD_ID, "injection_bench"),
                 FabricBlockEntityTypeBuilder.create(InjectionBenchBlockEntity::new, ModBlocks.INJECTION_BENCH).build(null));
 
         FirstFabricMod.LOGGER.info("Registering BlockEntities for " + FirstFabricMod.MOD_ID);
