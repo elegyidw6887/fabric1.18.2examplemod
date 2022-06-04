@@ -78,11 +78,11 @@ public class ModItems {
                     12895428, 11382189, new Item.Settings().group(ModItemGroup.LOSTsMOD)));
 
 
-    private static Item registerItem(String name, Item item){
+    private static Item registerItem(String name, Item item){ // 注册物品
         return Registry.register(Registry.ITEM, new Identifier(FirstFabricMod.MOD_ID, name), item);
     }
 
-    public static void registerModItems(){
+    public static void registerModItems(){ // 外部调用方法，提供给主类调用
         FirstFabricMod.LOGGER.info("Registering ModItems for " + FirstFabricMod.MOD_ID);
     }
 }
