@@ -32,16 +32,25 @@ public class FirstFabricMod implements ModInitializer {
 		ModConfiguredFeatures.registerModConfiguredFeatures();
 
 		ModItems.registerModItems();
+
 		ModBlocks.registerModBlocks();
+
 		ModFuels.registerModFuels();
+
 		ModEnchantments.registerModEnchantments();
+
 		ModPaintings.registerModPaintings();
+
 		ModCustomTrades.registerCustomTrades();
+
 		ModEffects.registerModEffects();
+
 		ModPotions.registerModPotions();
+
 		ModFluids.registerModFluids();
 
 		ModFlammableBlocks.registerModFlammableBlocks();
+
 		ModStrippables.registerModStrippables();
 
 		ModBlockEntities.registerBlockEntities();
