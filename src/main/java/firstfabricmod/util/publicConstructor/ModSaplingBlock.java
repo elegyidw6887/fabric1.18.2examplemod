@@ -1,4 +1,4 @@
-package firstfabricmod.block.customBlock;
+package firstfabricmod.util.publicConstructor;
 
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.sapling.SaplingGenerator;

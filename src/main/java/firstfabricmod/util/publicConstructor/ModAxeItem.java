@@ -1,4 +1,4 @@
-package firstfabricmod.item.customItem;
+package firstfabricmod.util.publicConstructor;
 
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ToolMaterial;

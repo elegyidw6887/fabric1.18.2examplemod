@@ -1,4 +1,4 @@
-package firstfabricmod.block.customBlock;
+package firstfabricmod.util.publicConstructor;
 
 import net.minecraft.block.FluidBlock;
 import net.minecraft.fluid.FlowableFluid;
