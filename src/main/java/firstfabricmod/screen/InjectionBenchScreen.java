@@ -33,6 +33,18 @@ public class InjectionBenchScreen extends HandledScreen<InjectionBenchScreenHand
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
         this.drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
+
+        if(handler.isCrafting()) {
+            drawTexture(matrices, x + 84, y + 22, 176, 14, handler.getScaledProgress(), 36);
+            // x的84与y的22就是在GUI中进度条最左上角的像素点位置（我们想要进度条开始进行的位置）
+            // u的176与v的14就是我们在GUI中为其准备的进度条的最左上角的像素点位置（我们准备好的进度条）
+        }
+
+        if(handler.hasFuel()) {
+            drawTexture(matrices, x + 18, y + 23 + 14 - handler.getScaledFuelProgress(), 176,
+                    14 - handler.getScaledFuelProgress(), 14, handler.getScaledFuelProgress());
+            //
+        }
     }
 
     @Override

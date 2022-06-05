@@ -10,6 +10,8 @@ import firstfabricmod.item.ModFuels;
 import firstfabricmod.item.ModItems;
 import firstfabricmod.item.ModPaintings;
 import firstfabricmod.item.ModPotions;
+import firstfabricmod.recipe.ModRecipes;
+import firstfabricmod.screen.ModScreenHandlers;
 import firstfabricmod.util.ModCustomTrades;
 import firstfabricmod.util.ModFlammableBlocks;
 import firstfabricmod.util.ModStrippables;
@@ -43,6 +45,10 @@ public class FirstFabricMod implements ModInitializer {
 		ModStrippables.registerModStrippables();
 
 		ModBlockEntities.registerBlockEntities();
+
+		ModScreenHandlers.registerScreenHandlers();
+
+		ModRecipes.registerModRecipes();
 
 		ModWorldGen.generateModWorldGen();
 

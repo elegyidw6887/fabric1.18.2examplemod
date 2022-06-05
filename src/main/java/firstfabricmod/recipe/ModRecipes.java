@@ -10,6 +10,8 @@ public class ModRecipes {
 
         Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(FirstFabricMod.MOD_ID, InjectionBenchRecipe.Serializer.ID),
                 InjectionBenchRecipe.Serializer.INSTANCE);
+        Registry.register(Registry.RECIPE_TYPE, new Identifier(FirstFabricMod.MOD_ID, InjectionBenchRecipe.Type.ID),
+                InjectionBenchRecipe.Type.INSTANCE);
 
         FirstFabricMod.LOGGER.info("Registering ModRecipes for " + FirstFabricMod.MOD_ID);
     }

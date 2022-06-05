@@ -26,6 +26,9 @@ public class InjectionBenchRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) { // 如果要修改配方，此处为需要修改的方法1
+        if (world.isClient){
+            return false;
+        }
         if (recipeItems.get(0).test(inventory.getStack(1))){
             return recipeItems.get(1).test(inventory.getStack(2));
         }
