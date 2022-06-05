@@ -95,12 +95,12 @@ public class FirstFabricMod implements ModInitializer {
             -自定义建筑
             -单个建筑结构
             -拼图建筑结构
-            -动物实体世界生成
 
         4.实体添加
             -使用GeckoLib自定义生物实体
             -幼年动物实体
             -生物实体变体
+            -生物实体世界生成
             -自定义村民
             -使用使用GeckoLib制作3D盔甲
 
