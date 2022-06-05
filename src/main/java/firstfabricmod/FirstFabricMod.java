@@ -85,6 +85,10 @@ public class FirstFabricMod implements ModInitializer {
 
         后续学习计划
 
+        2.进阶内容
+            -nbt数据扩展
+            -mixin扩展
+
         3.世界生成
             -树木自定义泥土
             -下界与末地矿石生成
@@ -94,14 +98,37 @@ public class FirstFabricMod implements ModInitializer {
             -动物实体世界生成
 
         4.实体添加
-            -使用GECKOLIB自定义生物实体
+            -使用GeckoLib自定义生物实体
             -幼年动物实体
             -生物实体变体
             -自定义村民
-            -使用使用GECKOLIB制作3D盔甲
+            -使用使用GeckoLib制作3D盔甲
 
         5.维度添加
             -自定义维度添加
+
+        6.个人计划
+            -套装盔甲效果添加
+            -使用Trinkets添加遗物槽
+            -添加拥有多种效果的遗物
+
+         */
+
+        /*
+
+        WIKI与教程链接
+
+        1.Fabric官方wiki
+            https://fabricmc.net/wiki/start
+
+        2.Kaupenjoe油管教程
+            https://www.youtube.com/playlist?list=PLKGarocXCE1ECgBI1_Z_Yr4qMdhjVi3kg
+
+        3.GeckoLib官方github wiki
+            https://github.com/bernie-g/geckolib/wiki
+
+        4.Trinkets官方github wiki
+            https://github.com/emilyploszaj/trinkets/wiki
 
          */
     }
