@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 public class ModItemGroup {
 
     public static final ItemGroup LOSTsMOD = FabricItemGroupBuilder.build(
-            new Identifier(FirstFabricMod.MOD_ID,"group1"),
+            new Identifier(FirstFabricMod.MOD_ID, "group1"),
             () -> new ItemStack(ModItems.AMETHYST));
 
 }

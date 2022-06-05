@@ -27,7 +27,8 @@ public class InjectionBenchBlock extends BlockWithEntity implements BlockEntityP
         super(settings);
     }
 
-    @Nullable @Override
+    @Nullable
+    @Override
     public BlockState getPlacementState(@NotNull ItemPlacementContext ctx) {
         return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
     }
@@ -48,7 +49,8 @@ public class InjectionBenchBlock extends BlockWithEntity implements BlockEntityP
     }
 
     /* 方块实体方法 */
-    @Nullable @Override
+    @Nullable
+    @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         // 创建方块实体方法，返回值是一个方块实体
         return new InjectionBenchBlockEntity(pos, state);
@@ -67,8 +69,8 @@ public class InjectionBenchBlock extends BlockWithEntity implements BlockEntityP
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof InjectionBenchBlockEntity) {
-                ItemScatterer.spawn(world, pos, (InjectionBenchBlockEntity)blockEntity);
-                world.updateComparators(pos,this);
+                ItemScatterer.spawn(world, pos, (InjectionBenchBlockEntity) blockEntity);
+                world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
         }
@@ -86,7 +88,8 @@ public class InjectionBenchBlock extends BlockWithEntity implements BlockEntityP
         return ActionResult.SUCCESS;
     }
 
-    @Nullable @Override
+    @Nullable
+    @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         // 实现参考“AbstractFurnaceBlock”类中的实现方法，但是并没有进行世界是否是客户端（world.isClient）的判断
         return checkType(type, ModBlockEntities.INJECTION_BENCH, InjectionBenchBlockEntity::tick);

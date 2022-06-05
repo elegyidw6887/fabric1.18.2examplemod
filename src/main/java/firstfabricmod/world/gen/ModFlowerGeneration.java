@@ -7,7 +7,7 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class ModFlowerGeneration {
 
-    public static void generateFlowers(){
+    public static void generateFlowers() {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.LILAC_PLACED.getKey().get());
     }

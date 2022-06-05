@@ -16,7 +16,7 @@ public class CubeEntity extends PathAwareEntity {
 
     public static final EntityType<CubeEntity> CUBE_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
-            new Identifier(MOD_ID,"cube_entity"),
+            new Identifier(MOD_ID, "cube_entity"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CubeEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
@@ -24,7 +24,7 @@ public class CubeEntity extends PathAwareEntity {
         super(entityType, world);
     }
 
-    public static void r_CubeEntity(){
+    public static void r_CubeEntity() {
         FabricDefaultAttributeRegistry.register(CUBE_ENTITY, CubeEntity.createMobAttributes());
     }
 }

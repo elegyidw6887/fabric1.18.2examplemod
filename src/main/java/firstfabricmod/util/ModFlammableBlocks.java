@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 
 public class ModFlammableBlocks {
 
-    private static void registerFlammableBlock(){
+    private static void registerFlammableBlock() {
         FlammableBlockRegistry instance = FlammableBlockRegistry.getDefaultInstance();
 
         instance.add(ModBlocks.JACARANDA_LOG, 5, 5);
@@ -16,7 +16,7 @@ public class ModFlammableBlocks {
         instance.add(ModBlocks.JACARANDA_PLANKS, 5, 20);
     }
 
-    public static void registerModFlammableBlocks(){
+    public static void registerModFlammableBlocks() {
         FirstFabricMod.LOGGER.info("Registering ModFlammableBlocks for " + FirstFabricMod.MOD_ID);
         registerFlammableBlock();
     }

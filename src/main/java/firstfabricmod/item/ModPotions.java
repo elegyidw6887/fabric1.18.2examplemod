@@ -14,15 +14,15 @@ public class ModPotions {
     public static Potion FREEZE_POTION = registerPotion("freeze_potion",
             new Potion(new StatusEffectInstance(ModEffects.FREEZE, 200, 0)));
 
-    private static Potion registerPotion(String name, Potion potion){
+    private static Potion registerPotion(String name, Potion potion) {
         return Registry.register(Registry.POTION, new Identifier(FirstFabricMod.MOD_ID, name), potion);
     }
 
-    private static void registerPotionRecipes(){
+    private static void registerPotionRecipes() {
         BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.AWKWARD, ModItems.AMETHYST, ModPotions.FREEZE_POTION);
     }
 
-    public static void registerModPotions(){
+    public static void registerModPotions() {
         FirstFabricMod.LOGGER.info("Registering ModPotions for " + FirstFabricMod.MOD_ID);
         registerPotionRecipes();
     }

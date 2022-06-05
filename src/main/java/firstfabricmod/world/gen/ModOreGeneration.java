@@ -7,7 +7,7 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class ModOreGeneration {
 
-    public static void generateOres(){
+    public static void generateOres() {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
                 ModPlacedFeatures.AMETHYST_ORE_PLACED.getKey().get());
     }

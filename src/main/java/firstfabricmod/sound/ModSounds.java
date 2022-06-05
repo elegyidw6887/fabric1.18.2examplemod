@@ -9,7 +9,7 @@ public class ModSounds {
 
     public static SoundEvent BAR_BRAWL = registerSoundEvent("bar_brawl");
 
-    private static SoundEvent registerSoundEvent(String name){
+    private static SoundEvent registerSoundEvent(String name) {
         Identifier id = new Identifier(FirstFabricMod.MOD_ID, name);
         return Registry.register(Registry.SOUND_EVENT, id, new SoundEvent(id));
     }

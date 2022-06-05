@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
 
-    AMETHYST(3,1321,9.0F,2.5F,24,() -> Ingredient.ofItems(ModItems.AMETHYST));
+    AMETHYST(3, 1321, 9.0F, 2.5F, 24, () -> Ingredient.ofItems(ModItems.AMETHYST));
 
     private final int miningLevel;
     private final int itemDurability;

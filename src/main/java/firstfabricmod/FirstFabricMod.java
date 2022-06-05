@@ -23,48 +23,48 @@ import org.slf4j.LoggerFactory;
 
 public class FirstFabricMod implements ModInitializer {
 
-	public static final String MOD_ID = "firstfabricmod";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final String MOD_ID = "firstfabricmod";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	@Override
-	public void onInitialize() {
+    @Override
+    public void onInitialize() {
 
-		// 模组配置功能注册
-		ModConfiguredFeatures.registerModConfiguredFeatures();
-		// 模组物品注册
-		ModItems.registerModItems();
-		// 模组方块注册
-		ModBlocks.registerModBlocks();
-		// 模组燃料注册
-		ModFuels.registerModFuels();
-		// 模组附魔注册
-		ModEnchantments.registerModEnchantments();
-		// 模组画注册
-		ModPaintings.registerModPaintings();
-		// 模组自定义交易注册
-		ModCustomTrades.registerCustomTrades();
-		// 模组自定义效果注册
-		ModEffects.registerModEffects();
-		// 模组药水注册
-		ModPotions.registerModPotions();
-		// 模组流体注册
-		ModFluids.registerModFluids();
-		// 模组可燃方块注册
-		ModFlammableBlocks.registerModFlammableBlocks();
-		// 模组去皮木材注册
-		ModStrippables.registerModStrippables();
-		// 模组方块实体注册
-		ModBlockEntities.registerBlockEntities();
-		// 模组屏幕处理器注册
-		ModScreenHandlers.registerScreenHandlers();
-		// 模组配方注册
-		ModRecipes.registerModRecipes();
-		// 模组世界生成配置
-		ModWorldGen.generateModWorldGen();
+        // 模组配置功能注册
+        ModConfiguredFeatures.registerModConfiguredFeatures();
+        // 模组物品注册
+        ModItems.registerModItems();
+        // 模组方块注册
+        ModBlocks.registerModBlocks();
+        // 模组燃料注册
+        ModFuels.registerModFuels();
+        // 模组附魔注册
+        ModEnchantments.registerModEnchantments();
+        // 模组画注册
+        ModPaintings.registerModPaintings();
+        // 模组自定义交易注册
+        ModCustomTrades.registerCustomTrades();
+        // 模组自定义效果注册
+        ModEffects.registerModEffects();
+        // 模组药水注册
+        ModPotions.registerModPotions();
+        // 模组流体注册
+        ModFluids.registerModFluids();
+        // 模组可燃方块注册
+        ModFlammableBlocks.registerModFlammableBlocks();
+        // 模组去皮木材注册
+        ModStrippables.registerModStrippables();
+        // 模组方块实体注册
+        ModBlockEntities.registerBlockEntities();
+        // 模组屏幕处理器注册
+        ModScreenHandlers.registerScreenHandlers();
+        // 模组配方注册
+        ModRecipes.registerModRecipes();
+        // 模组世界生成配置
+        ModWorldGen.generateModWorldGen();
 
-		CubeEntity.r_CubeEntity();
+        CubeEntity.r_CubeEntity();
 
-		LOGGER.info("Hello Fabric world!");
+        LOGGER.info("Hello Fabric world!");
 
 		/*
 
@@ -80,5 +80,5 @@ public class FirstFabricMod implements ModInitializer {
 			未解决
 
 		 */
-	}
+    }
 }

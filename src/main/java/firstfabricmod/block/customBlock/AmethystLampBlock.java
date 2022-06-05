@@ -21,7 +21,7 @@ public class AmethystLampBlock extends Block {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(!world.isClient() && hand == Hand.MAIN_HAND){
+        if (!world.isClient() && hand == Hand.MAIN_HAND) {
             boolean currentState = state.get(CLICKED);
             world.setBlockState(pos, state.with(CLICKED, !currentState), Block.NOTIFY_ALL);
         }

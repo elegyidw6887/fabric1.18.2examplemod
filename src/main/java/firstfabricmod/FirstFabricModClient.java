@@ -23,7 +23,7 @@ import static firstfabricmod.FirstFabricMod.MOD_ID;
 
 public class FirstFabricModClient implements ClientModInitializer {
 
-    public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier(MOD_ID,"cube"),"main");
+    public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier(MOD_ID, "cube"), "main");
 
     @Override
     public void onInitializeClient() {

@@ -15,7 +15,7 @@ public class CubeEntityModel extends EntityModel<CubeEntity> {
         this.base = base.getChild(EntityModelPartNames.CUBE);
     }
 
-    public static TexturedModelData getTexturedModelData(){
+    public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
         modelPartData.addChild(EntityModelPartNames.CUBE,
@@ -31,6 +31,6 @@ public class CubeEntityModel extends EntityModel<CubeEntity> {
 
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
-        ImmutableList.of(this.base).forEach((modelRenderer)-> modelRenderer.render(matrices, vertices, light, overlay, red, green, blue, alpha));
+        ImmutableList.of(this.base).forEach((modelRenderer) -> modelRenderer.render(matrices, vertices, light, overlay, red, green, blue, alpha));
     }
 }

@@ -6,13 +6,13 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class FreezeEffect extends StatusEffect {
 
-    public FreezeEffect(StatusEffectCategory statusEffectCategory, int color){
+    public FreezeEffect(StatusEffectCategory statusEffectCategory, int color) {
         super(statusEffectCategory, color);
     }
 
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if (!entity.world.isClient){
+        if (!entity.world.isClient) {
             double x = entity.getX();
             double y = entity.getY();
             double z = entity.getZ();

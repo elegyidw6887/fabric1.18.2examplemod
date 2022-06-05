@@ -26,8 +26,8 @@ public class ModItems {
 
     // 紫水晶物品
     public static final Item AMETHYST = registerItem("amethyst",
-            new Item(new FabricItemSettings().group(ModItemGroup.LOSTsMOD).maxCount(64)){
-                public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
+            new Item(new FabricItemSettings().group(ModItemGroup.LOSTsMOD).maxCount(64)) {
+                public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
                     tooltip.add(new TranslatableText("item.firstfabricmod.amethyst.tooltip"));
                 }
             });
@@ -40,11 +40,11 @@ public class ModItems {
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
             new SwordItem(ModToolMaterials.AMETHYST, 3, -2.4F, new FabricItemSettings().group(ModItemGroup.LOSTsMOD)));
     public static final Item AMETHYST_AXE = registerItem("amethyst_axe",
-            new ModAxeItem(ModToolMaterials.AMETHYST,4, -3F, new FabricItemSettings().group(ModItemGroup.LOSTsMOD)));
+            new ModAxeItem(ModToolMaterials.AMETHYST, 4, -3F, new FabricItemSettings().group(ModItemGroup.LOSTsMOD)));
     public static final Item AMETHYST_HOE = registerItem("amethyst_hoe",
-            new ModHoeItem(ModToolMaterials.AMETHYST,1 ,0F, new FabricItemSettings().group(ModItemGroup.LOSTsMOD)));
+            new ModHoeItem(ModToolMaterials.AMETHYST, 1, 0F, new FabricItemSettings().group(ModItemGroup.LOSTsMOD)));
     public static final Item AMETHYST_PICKAXE = registerItem("amethyst_pickaxe",
-            new ModPickaxeItem(ModToolMaterials.AMETHYST,2,-2.8F, new FabricItemSettings().group(ModItemGroup.LOSTsMOD)));
+            new ModPickaxeItem(ModToolMaterials.AMETHYST, 2, -2.8F, new FabricItemSettings().group(ModItemGroup.LOSTsMOD)));
     // 紫水晶盔甲
     public static final Item AMETHYST_HELMET = registerItem("amethyst_helmet",
             new ArmorItem(ModArmorMaterials.AMETHYST, EquipmentSlot.HEAD, new FabricItemSettings().group(ModItemGroup.LOSTsMOD)));
@@ -75,12 +75,11 @@ public class ModItems {
                     12895428, 11382189, new Item.Settings().group(ModItemGroup.LOSTsMOD)));
 
 
-
-    private static Item registerItem(String name, Item item){ // 注册物品
+    private static Item registerItem(String name, Item item) { // 注册物品
         return Registry.register(Registry.ITEM, new Identifier(FirstFabricMod.MOD_ID, name), item);
     }
 
-    public static void registerModItems(){ // 外部调用方法，提供给主类调用
+    public static void registerModItems() { // 外部调用方法，提供给主类调用
         FirstFabricMod.LOGGER.info("Registering ModItems for " + FirstFabricMod.MOD_ID);
     }
 }

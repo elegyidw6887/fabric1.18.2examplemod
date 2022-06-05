@@ -11,7 +11,7 @@ public class GrapeVineBlock extends CropBlock {
     }
 
     @Override
-    protected ItemConvertible getSeedsItem(){
+    protected ItemConvertible getSeedsItem() {
         return ModItems.GRAPE_SEEDS;
     }
 }

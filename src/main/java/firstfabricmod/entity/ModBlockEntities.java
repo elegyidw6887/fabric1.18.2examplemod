@@ -12,7 +12,7 @@ public class ModBlockEntities {
 
     public static BlockEntityType<InjectionBenchBlockEntity> INJECTION_BENCH;
 
-    public static void registerBlockEntities(){
+    public static void registerBlockEntities() {
 
         INJECTION_BENCH = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(FirstFabricMod.MOD_ID, "injection_bench"),

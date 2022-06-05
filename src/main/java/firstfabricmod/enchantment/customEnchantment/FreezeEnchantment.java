@@ -16,7 +16,7 @@ public class FreezeEnchantment extends Enchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 10*level;
+        return 10 * level;
     }
 
     @Override
@@ -26,8 +26,8 @@ public class FreezeEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if (target instanceof LivingEntity){
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(ModEffects.FREEZE, 20*level, level-1));
+        if (target instanceof LivingEntity) {
+            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(ModEffects.FREEZE, 20 * level, level - 1));
         }
         super.onTargetDamaged(user, target, level);
     }

@@ -9,7 +9,7 @@ import net.minecraft.village.VillagerProfession;
 
 public class ModCustomTrades {
 
-    public static void registerCustomTrades(){
+    public static void registerCustomTrades() {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
                 factories -> factories.add((entity, random) -> new TradeOffer(
                         new ItemStack(Items.EMERALD, 2),

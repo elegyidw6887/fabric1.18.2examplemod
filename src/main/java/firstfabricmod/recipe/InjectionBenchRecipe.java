@@ -26,10 +26,10 @@ public class InjectionBenchRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) { // 如果要修改配方，此处为需要修改的方法1
-        if (world.isClient){
+        if (world.isClient) {
             return false;
         }
-        if (recipeItems.get(0).test(inventory.getStack(1))){
+        if (recipeItems.get(0).test(inventory.getStack(1))) {
             return recipeItems.get(1).test(inventory.getStack(2));
         }
         return false;
@@ -65,13 +65,16 @@ public class InjectionBenchRecipe implements Recipe<SimpleInventory> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<InjectionBenchRecipe>{
-        private Type(){};
+    public static class Type implements RecipeType<InjectionBenchRecipe> {
+        private Type() {
+        }
+
+        ;
         public static final Type INSTANCE = new Type();
         public static final String ID = "injection_bench";
     }
 
-    public static class Serializer implements RecipeSerializer<InjectionBenchRecipe>{  // 如果要修改配方，此处为需要修改的方法2
+    public static class Serializer implements RecipeSerializer<InjectionBenchRecipe> {  // 如果要修改配方，此处为需要修改的方法2
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "injection_bench";
 
@@ -82,7 +85,7 @@ public class InjectionBenchRecipe implements Recipe<SimpleInventory> {
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY);
 
-            for (int i = 0; i < inputs.size(); i++){
+            for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 

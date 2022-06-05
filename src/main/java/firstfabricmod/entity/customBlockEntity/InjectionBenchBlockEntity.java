@@ -49,6 +49,7 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
                     default -> 0;
                 };
             }
+
             @Override
             public void set(int index, int value) {
                 switch (index) {
@@ -58,6 +59,7 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
                     case 3 -> InjectionBenchBlockEntity.this.maxFuelTime = value;
                 }
             }
+
             @Override
             public int size() {
                 return 4;
@@ -75,7 +77,8 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
         return new LiteralText("injection_bench");
     }
 
-    @Nullable @Override
+    @Nullable
+    @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
         return new InjectionBenchScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
@@ -102,7 +105,7 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
 
     private void consumeFuel() {
         // 燃料消耗方法
-        if(!getStack(0).isEmpty()) {
+        if (!getStack(0).isEmpty()) {
             this.fuelTime = FuelRegistry.INSTANCE.get(this.removeStack(0, 1).getItem());
             this.maxFuelTime = this.fuelTime;
         }
@@ -110,17 +113,17 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
 
     public static void tick(World world, BlockPos pos, BlockState state, InjectionBenchBlockEntity entity) {
         // 执行本体
-        if(isConsumingFuel(entity)) {
+        if (isConsumingFuel(entity)) {
             entity.fuelTime--;
         }
 
-        if(hasRecipe(entity)) {
-            if(hasFuelInFuelSlot(entity) && !isConsumingFuel(entity)) {
+        if (hasRecipe(entity)) {
+            if (hasFuelInFuelSlot(entity) && !isConsumingFuel(entity)) {
                 entity.consumeFuel();
             }
-            if(isConsumingFuel(entity)) {
+            if (isConsumingFuel(entity)) {
                 entity.progress++;
-                if(entity.progress > entity.maxProgress) {
+                if (entity.progress > entity.maxProgress) {
                     craftItem(entity);
                 }
             }
@@ -167,9 +170,9 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
         Optional<InjectionBenchRecipe> match = world.getRecipeManager()
                 .getFirstMatch(InjectionBenchRecipe.Type.INSTANCE, inventory, world);
 
-        if(match.isPresent()) {
-            entity.removeStack(1,1);
-            entity.removeStack(2,1);
+        if (match.isPresent()) {
+            entity.removeStack(1, 1);
+            entity.removeStack(2, 1);
 
             entity.setStack(3, new ItemStack(match.get().getOutput().getItem(),
                     entity.getStack(3).getCount() + 1));

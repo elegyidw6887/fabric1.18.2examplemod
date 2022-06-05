@@ -7,7 +7,7 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class ModTreeGeneration {
 
-    public static void generateTrees(){
+    public static void generateTrees() {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.JACARANDA_PLACED.getKey().get());
     }

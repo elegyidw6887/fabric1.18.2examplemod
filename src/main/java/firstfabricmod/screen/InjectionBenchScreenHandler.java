@@ -63,7 +63,7 @@ public class InjectionBenchScreenHandler extends ScreenHandler {
         int maxFuelProgress = this.propertyDelegate.get(3);
         int fuelProgressSize = 14;
 
-        return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
+        return maxFuelProgress != 0 ? (int) (((float) fuelProgress / (float) maxFuelProgress) * fuelProgressSize) : 0;
     }
 
     @Override

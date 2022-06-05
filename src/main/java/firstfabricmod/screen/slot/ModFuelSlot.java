@@ -22,7 +22,7 @@ public class ModFuelSlot extends Slot {
         return ModFuelSlot.isBucket(stack) ? 1 : super.getMaxItemCount(stack);
     }
 
-    public static boolean isBucket(ItemStack stack){
+    public static boolean isBucket(ItemStack stack) {
         return stack.isOf(Items.BUCKET);
     }
 }

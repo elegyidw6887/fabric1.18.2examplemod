@@ -48,8 +48,7 @@ public class ModConfiguredFeatures {
                     new OreFeatureConfig(OVERWORLD_AMETHYST_ORES, 9));
 
 
-
-    public static void registerModConfiguredFeatures(){
+    public static void registerModConfiguredFeatures() {
         FirstFabricMod.LOGGER.info("Registering ModConfiguredFeatures for " + FirstFabricMod.MOD_ID);
     }
 }
