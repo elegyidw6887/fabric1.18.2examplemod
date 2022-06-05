@@ -64,5 +64,16 @@ public class FirstFabricMod implements ModInitializer {
 		CubeEntity.r_CubeEntity();
 
 		LOGGER.info("Hello Fabric world!");
+
+		/*
+
+		Fabric学习过程中出现的问题
+
+		1.2022.6.4
+			注入工作台在使用BB制作的模型后放在左手进行放置的时候游戏会弹出并报错
+			模组开发中使用仿熔炉设计时可以放置左手进行放置
+			未解决
+
+		 */
 	}
 }
