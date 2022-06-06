@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "examplefabricmod:block/injection_bench"
+    },
+    "facing=east": {
+      "model": "examplefabricmod:block/injection_bench",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "examplefabricmod:block/injection_bench",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "examplefabricmod:block/injection_bench",
+      "y": 270
+    }
+  }
+}

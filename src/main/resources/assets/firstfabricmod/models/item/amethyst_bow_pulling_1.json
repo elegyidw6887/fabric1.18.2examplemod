@@ -1,6 +1,0 @@
-{
-  "parent": "firstfabricmod:item/amethyst_bow",
-  "textures": {
-    "layer0": "firstfabricmod:item/amethyst_bow_pulling_1"
-  }
-}

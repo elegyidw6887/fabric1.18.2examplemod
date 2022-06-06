@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "clicked=false": { "model" : "firstfabricmod:block/amethyst_lamp_off" },
-    "clicked=true": { "model" : "firstfabricmod:block/amethyst_lamp_on" }
-  }
-}

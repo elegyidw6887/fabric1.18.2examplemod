@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "examplefabricmod:jacaranda_log",
+    "examplefabricmod:jacaranda_wood",
+    "examplefabricmod:stripped_jacaranda_log",
+    "examplefabricmod:stripped_jacaranda_wood"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "examplefabricmod:item/amethyst_bow",
+  "textures": {
+    "layer0": "examplefabricmod:item/amethyst_bow_pulling_1"
+  }
+}

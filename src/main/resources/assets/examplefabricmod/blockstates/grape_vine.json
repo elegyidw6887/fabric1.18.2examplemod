@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "examplefabricmod:block/grape_vine0"
+    },
+    "age=1": {
+      "model": "examplefabricmod:block/grape_vine1"
+    },
+    "age=2": {
+      "model": "examplefabricmod:block/grape_vine2"
+    },
+    "age=3": {
+      "model": "examplefabricmod:block/grape_vine3"
+    },
+    "age=4": {
+      "model": "examplefabricmod:block/grape_vine4"
+    },
+    "age=5": {
+      "model": "examplefabricmod:block/grape_vine5"
+    },
+    "age=6": {
+      "model": "examplefabricmod:block/grape_vine6"
+    },
+    "age=7": {
+      "model": "examplefabricmod:block/grape_vine7"
+    }
+  }
+}

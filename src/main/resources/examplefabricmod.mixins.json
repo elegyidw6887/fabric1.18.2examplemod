@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "examplefabricmod.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BrewingRecipeRegistryMixin",
+    "FabricMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

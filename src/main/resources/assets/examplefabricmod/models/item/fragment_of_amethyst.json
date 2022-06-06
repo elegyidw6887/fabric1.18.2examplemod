@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "examplefabricmod:item/fragment_of_amethyst"
+  }
+}

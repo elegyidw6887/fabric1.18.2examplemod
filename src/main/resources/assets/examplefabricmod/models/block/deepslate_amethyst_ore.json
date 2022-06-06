@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "examplefabricmod:block/deepslate_amethyst_ore"
+  }
+}

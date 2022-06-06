@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "examplefabricmod:block/jacaranda_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "examplefabricmod:block/jacaranda_wood"
+    },
+    "axis=z": {
+      "model": "examplefabricmod:block/jacaranda_wood",
+      "x": 90
+    }
+  }
+}

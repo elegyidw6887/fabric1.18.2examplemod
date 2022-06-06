@@ -1,9 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "firstfabricmod",
+  "id": "examplefabricmod",
   "version": "${version}",
-
-  "name": "FirstFabricMod",
+  "name": "ExampleFabricMod",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Me!"
@@ -12,21 +11,19 @@
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
-
   "license": "CC0-1.0",
-  "icon": "assets/firstfabricmod/icon.png",
-
+  "icon": "assets/examplefabricmod/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "firstfabricmod.FirstFabricMod"
+      "examplefabricmod.ExampleFabricMod"
     ],
     "client": [
-      "firstfabricmod.FirstFabricModClient"
+      "examplefabricmod.ExampleFabricModClient"
     ]
   },
   "mixins": [
-    "firstfabricmod.mixins.json"
+    "examplefabricmod.mixins.json"
   ],
 
   "depends": {

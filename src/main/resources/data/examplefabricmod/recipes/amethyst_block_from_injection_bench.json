@@ -1,0 +1,14 @@
+{
+  "type": "examplefabricmod:injection_bench",
+  "ingredients": [
+    {
+      "item": "examplefabricmod:amethyst"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "output": {
+    "item": "examplefabricmod:amethyst_block"
+  }
+}

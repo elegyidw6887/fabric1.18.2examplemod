@@ -1,0 +1,10 @@
+{
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "examplefabricmod:bar_brawl",
+        "stream": "true"
+      }
+    ]
+  }
+}

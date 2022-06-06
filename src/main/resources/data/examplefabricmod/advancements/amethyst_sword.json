@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "examplefabricmod:amethyst_sword"
+    },
+    "title": "Amethyst Sword!",
+    "description": "I like this Swooooooord",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "examplefabricmod:examplefabricmod",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "examplefabricmod:amethyst_sword"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

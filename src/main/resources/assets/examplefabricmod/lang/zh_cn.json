@@ -1,0 +1,16 @@
+{
+  "itemGroup.examplefabricmod.group1": "LOST的MOD",
+  "item.examplefabricmod.amethyst": "紫水晶",
+  "item.examplefabricmod.amethyst.tooltip": "§5一颗闪亮的紫水晶",
+  "block.examplefabricmod.amethyst_block": "紫水晶块",
+  "block.examplefabricmod.amethyst_ore": "紫水晶矿石",
+  "block.examplefabricmod.deepslate_amethyst_ore": "深层紫水晶矿石",
+  "item.examplefabricmod.blood_bucket": "血桶",
+  "item.examplefabricmod.cube_entity_egg": "实体方块刷怪蛋",
+  "enchantment.examplefabricmod.freeze": "冻结",
+  "item.examplefabricmod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.examplefabricmod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl(CC0)",
+  "item.minecraft.potion.effect.freeze_potion": "冰冻药水",
+  "item.minecraft.splash_potion.effect.freeze_potion": "溅射型冰冻药水",
+  "item.minecraft.lingering_potion.effect.freeze_potion": "滞留性冰冻药水"
+}

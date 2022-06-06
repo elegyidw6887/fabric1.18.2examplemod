@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "examplefabricmod:block/lilac_flower"
+  }
+}

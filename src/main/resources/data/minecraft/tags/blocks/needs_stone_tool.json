@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "firstfabricmod:injection_bench"
+    "examplefabricmod:injection_bench"
   ]
 }
