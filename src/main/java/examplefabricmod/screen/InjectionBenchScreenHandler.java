@@ -98,7 +98,7 @@ public class InjectionBenchScreenHandler extends ScreenHandler {
     }
 
     private void addPlayerInventory(PlayerInventory playerInventory) {
-        // 用于读取玩家物品栏
+        // 用于读取玩家物品栏并添加到GUI中
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
                 this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
@@ -107,7 +107,7 @@ public class InjectionBenchScreenHandler extends ScreenHandler {
     }
 
     private void addPlayerHotbar(PlayerInventory playerInventory) {
-        // 用于读取玩家快捷栏
+        // 用于读取玩家快捷栏并添加到GUI中
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
         }

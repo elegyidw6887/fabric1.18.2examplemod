@@ -43,7 +43,10 @@ public class InjectionBenchScreen extends HandledScreen<InjectionBenchScreenHand
         if (handler.hasFuel()) {
             drawTexture(matrices, x + 18, y + 23 + 14 - handler.getScaledFuelProgress(), 176,
                     14 - handler.getScaledFuelProgress(), 14, handler.getScaledFuelProgress());
-            //
+            // x的18与y的23+14就是在GUI中燃料燃烧进度最左下角的像素点位置，其中14为燃料燃烧进度的y值像素，23为燃料燃烧进度左上角的位置
+            // y + 23 + 14 - handler.getScaledFuelProgress()中的handler.getScaledFuelProgress()就是燃料的燃烧进度
+            // 因为燃料燃烧的进度与制作进度相反，为渐渐消失，因此需要handler.getScaledFuelProgress()来进行控制
+            // u的176与v的14 - handler.getScaledFuelProgress()就是我们在GUI中为其准备的进度条的最左上角的像素点位置
         }
     }
 

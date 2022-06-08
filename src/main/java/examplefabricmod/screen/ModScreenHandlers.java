@@ -12,5 +12,7 @@ public class ModScreenHandlers {
     public static void registerScreenHandlers() {
         INJECTION_BENCH_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(ExampleFabricMod.MOD_ID, "injection_bench"),
                 InjectionBenchScreenHandler::new);
+
+        ExampleFabricMod.LOGGER.info("Registering ModScreenHandlers for " + ExampleFabricMod.MOD_ID);
     }
 }
