@@ -66,15 +66,13 @@ public class InjectionBenchRecipe implements Recipe<SimpleInventory> {
     }
 
     public static class Type implements RecipeType<InjectionBenchRecipe> {
-        private Type() {
-        }
-
-        ;
+        private Type() {}
         public static final Type INSTANCE = new Type();
         public static final String ID = "injection_bench";
     }
 
-    public static class Serializer implements RecipeSerializer<InjectionBenchRecipe> {  // 如果要修改配方，此处为需要修改的方法2
+    public static class Serializer implements RecipeSerializer<InjectionBenchRecipe> { // 如果要修改配方，此处为需要修改的方法2
+
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "injection_bench";
 
@@ -97,9 +95,7 @@ public class InjectionBenchRecipe implements Recipe<SimpleInventory> {
 
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromPacket(buf));
-            }
+            inputs.replaceAll(ignored -> Ingredient.fromPacket(buf));
 
             ItemStack output = buf.readItemStack();
             return new InjectionBenchRecipe(id, output, inputs);

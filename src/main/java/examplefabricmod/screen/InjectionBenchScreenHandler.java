@@ -18,12 +18,12 @@ public class InjectionBenchScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public InjectionBenchScreenHandler(int syncId, PlayerInventory playerInventory) {
-        // 构造方法
+        // 构造方法1
         this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(4));
     }
 
     public InjectionBenchScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
-        // 构造方法
+        // 构造方法2
         super(ModScreenHandlers.INJECTION_BENCH_SCREEN_HANDLER, syncId);
         checkSize(inventory, 4);
         this.inventory = inventory;
@@ -43,25 +43,29 @@ public class InjectionBenchScreenHandler extends ScreenHandler {
     }
 
     public boolean isCrafting() {
+        // 判断是否正在制作
         return propertyDelegate.get(0) > 0;
     }
 
     public boolean hasFuel() {
+        // 判断是否有燃料
         return propertyDelegate.get(2) > 0;
     }
 
     public int getScaledProgress() {
+        // 获取制作进度程度
         int progress = this.propertyDelegate.get(0);
-        int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the width in pixels of your arrow
+        int maxProgress = this.propertyDelegate.get(1);
+        int progressArrowSize = 26; // 制作进度的像素大小（宽度）
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
     public int getScaledFuelProgress() {
+        // 获取燃料进度程度
         int fuelProgress = this.propertyDelegate.get(2);
         int maxFuelProgress = this.propertyDelegate.get(3);
-        int fuelProgressSize = 14;
+        int fuelProgressSize = 14; // 燃料进度的像素大小
 
         return maxFuelProgress != 0 ? (int) (((float) fuelProgress / (float) maxFuelProgress) * fuelProgressSize) : 0;
     }
