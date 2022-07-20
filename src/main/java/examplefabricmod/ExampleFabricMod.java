@@ -90,7 +90,6 @@ public class ExampleFabricMod implements ModInitializer {
             -mixin扩展
 
         3.世界生成
-            -树木自定义泥土
             -下界与末地矿石生成
             -自定义建筑
             -单个建筑结构

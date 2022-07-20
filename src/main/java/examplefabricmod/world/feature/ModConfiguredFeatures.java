@@ -3,6 +3,7 @@ package examplefabricmod.world.feature;
 import examplefabricmod.ExampleFabricMod;
 import examplefabricmod.block.ModBlocks;
 import net.minecraft.block.Blocks;
+import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
@@ -44,9 +45,23 @@ public class ModConfiguredFeatures {
             OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, ModBlocks.AMETHYST_ORE.getDefaultState()),
             OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_AMETHYST_ORE.getDefaultState()));
 
+    public static final List<OreFeatureConfig.Target> NETHER_AMETHYST_ORES = List.of(
+            OreFeatureConfig.createTarget(OreConfiguredFeatures.BASE_STONE_NETHER, ModBlocks.NETHER_AMETHYST_ORE.getDefaultState()));
+
+    public static final List<OreFeatureConfig.Target> END_AMETHYST_ORES = List.of(
+            OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.END_STONE), ModBlocks.END_AMETHYST_ORE.getDefaultState()));
+
     public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> AMETHYST_ORE =
             ConfiguredFeatures.register("amethyst_ore", Feature.ORE,
                     new OreFeatureConfig(OVERWORLD_AMETHYST_ORES, 9));
+
+    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> NETHER_AMETHYST_ORE =
+            ConfiguredFeatures.register("nether_amethyst_ore", Feature.ORE,
+                    new OreFeatureConfig(NETHER_AMETHYST_ORES, 9));
+
+    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> END_AMETHYST_ORE =
+            ConfiguredFeatures.register("end_amethyst_ore", Feature.ORE,
+                    new OreFeatureConfig(END_AMETHYST_ORES, 9));
 
 
     public static void registerModConfiguredFeatures() {

@@ -35,6 +35,10 @@ public class ModBlocks {
             new OreBlock(FabricBlockSettings.of(Material.STONE).hardness(3.0F).requiresTool(), UniformIntProvider.create(2, 6)), ModItemGroup.LOSTsMOD);
     public static final Block DEEPSLATE_AMETHYST_ORE = registerBlock("deepslate_amethyst_ore",
             new OreBlock(FabricBlockSettings.of(Material.STONE).hardness(4.5F).requiresTool(), UniformIntProvider.create(2, 6)), ModItemGroup.LOSTsMOD);
+    public static final Block NETHER_AMETHYST_ORE = registerBlock("nether_amethyst_ore",
+            new OreBlock(FabricBlockSettings.of(Material.STONE).hardness(4.5F).requiresTool(), UniformIntProvider.create(2, 6)), ModItemGroup.LOSTsMOD);
+    public static final Block END_AMETHYST_ORE = registerBlock("end_amethyst_ore",
+            new OreBlock(FabricBlockSettings.of(Material.STONE).hardness(4.5F).requiresTool(), UniformIntProvider.create(2, 6)), ModItemGroup.LOSTsMOD);
     // 花方块
     public static final Block LILAC_FLOWER = registerBlock("lilac_flower",
             new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 12,

@@ -29,4 +29,16 @@ public class ModPlacedFeatures {
                     ModConfiguredFeatures.AMETHYST_ORE,
                     ModOreFeatures.modifiersWithCount(7,
                             HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(-88), YOffset.aboveBottom(80))));
+
+    public static final RegistryEntry<PlacedFeature> NETHER_AMETHYST_ORE_PLACED =
+            PlacedFeatures.register("nether_amethyst_ore_placed",
+                    ModConfiguredFeatures.NETHER_AMETHYST_ORE,
+                    ModOreFeatures.modifiersWithCount(7,
+                            HeightRangePlacementModifier.uniform(YOffset.aboveBottom(-88), YOffset.aboveBottom(80))));
+
+    public static final RegistryEntry<PlacedFeature> END_AMETHYST_ORE_PLACED =
+            PlacedFeatures.register("end_amethyst_ore_placed",
+                    ModConfiguredFeatures.END_AMETHYST_ORE,
+                    ModOreFeatures.modifiersWithCount(7,
+                            HeightRangePlacementModifier.uniform(YOffset.aboveBottom(-88), YOffset.aboveBottom(80))));
 }
