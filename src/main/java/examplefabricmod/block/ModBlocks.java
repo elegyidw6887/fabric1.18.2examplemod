@@ -65,7 +65,7 @@ public class ModBlocks {
     // 树苗方块
     public static final Block JACARANDA_SAPLING = registerBlock("jacaranda_sapling",
             new ModSaplingBlock(new JacarandaSaplingGenerator(),
-                    FabricBlockSettings.copy(Blocks.OAK_SAPLING).strength(4.0F).nonOpaque()), ModItemGroup.LOSTsMOD);
+                    FabricBlockSettings.copy(Blocks.OAK_SAPLING).nonOpaque(), () -> ModBlocks.AMETHYST_BLOCK), ModItemGroup.LOSTsMOD);
     // 注入工作台方块
     public static final Block INJECTION_BENCH = registerBlock("injection_bench",
             new InjectionBenchBlock(FabricBlockSettings.of(Material.METAL).requiresTool().nonOpaque()), ModItemGroup.LOSTsMOD);

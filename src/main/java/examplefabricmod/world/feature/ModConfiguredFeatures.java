@@ -25,6 +25,7 @@ public class ModConfiguredFeatures {
                             BlockStateProvider.of(Blocks.ACACIA_LEAVES),
                             new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 4),
                             new TwoLayersFeatureSize(1, 0, 2))
+                            .dirtProvider(BlockStateProvider.of(ModBlocks.AMETHYST_BLOCK))
                             .build());
     public static final RegistryEntry<PlacedFeature> JACARANDA_CHECKED =
             PlacedFeatures.register("jacaranda_checked", JACARANDA_TREE, PlacedFeatures.wouldSurvive(ModBlocks.JACARANDA_SAPLING));
