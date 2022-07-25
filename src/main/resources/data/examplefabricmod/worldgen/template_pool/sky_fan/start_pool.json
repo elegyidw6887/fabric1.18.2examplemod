@@ -1,0 +1,48 @@
+{
+  // 拼图池（Jigsaw pool）或模板池（Template pool）使用拼图方块，用于生成结构
+  // 更多关于模版池的内容可以前往Wiki查询
+  // https://minecraft.gamepedia.com/Custom_world_generation
+
+  // 该池的命名空间id
+  "name": "examplefabricmod:sky_fan/start_pool",
+
+  // 回落池
+  /*
+    可以被设定为另一模板池。回落池中定义的模板会在以下三种情况下生成：
+      1.当拼图方块生成达到预定层数时，回落池会生成在最后一层的末尾。原版中，回落池用于生成村庄街道的末尾处
+      2.当一个结构中的拼图方块试图加载的模板的边界箱既不完全在结构边界外部也不完全在结构边界内部时，参照拼图方块
+      3.当一个结构中的拼图方块试图加载的模板与其他已生成的结构有冲突时。例如，某拼图方块试图把一个12x12x12的结构加载到两个只有10方块间隔的结构之间。
+    以上三种情况中，游戏会试图从回落池加载一个模板来替代原先的模板进行生成。回落池中模板的大小可以是任意的，但通常比模板池中已有的结构小。当回落池中的模板真正尝试生成时，如果符合以下条件：
+      若为情况1、3：即将生成的模板不与其他已生成的结构冲突。
+      若为情况2：即将生成的模板完全位于原结构边界的内部。
+    此时，此模板将成功生成。否则，不会生成任何东西。
+  */
+  "fallback": "minecraft:empty",
+
+  // 一个可供选择的结构列表，在这里，您可以列出尽可能多的 nbt 文件或放置的要素以生成。
+  // Do note that placed features needs a special element entry stuff.
+  // 请注意，放置的功能需要特殊的元素条目。
+  "elements": [
+    {
+      // 使用该池时的权重
+      "weight": 1,
+      // 该元素的属性
+      "element": {
+
+        // 属性的类型，可以有多种选择，具体见wiki
+        // 此处使用的“minecraft:single_pool_element”会使用空气方块来替换生成范围内的方块，建筑物中的空位不受影响
+        "element_type": "minecraft:single_pool_element",
+
+        // 要放置的结构的命名空间id，也就是nbt文件本身的标识符，其会自动检查“structures”目录中的nbt文件
+        "location": "examplefabricmod:sky_fan",
+
+        // 指定在将上述nbt文件放置在世界中时运行此处理器列表，处理器列表非常适合随机化块并使结构看起来更自然
+        // 其会自动检查“worldgen/processor_list”目录中的json文件
+        "processors": "examplefabricmod:randomize_stonebrick",
+
+        //  可为“rigid”或“terrain_matching”
+        "projection": "rigid"
+      }
+    }
+  ]
+}

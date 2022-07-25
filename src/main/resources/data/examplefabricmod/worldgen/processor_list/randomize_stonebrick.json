@@ -1,0 +1,65 @@
+{
+  // 处理器列表将为nbt文件放置的每个块运行一次处理器
+  // 处理器列表的结果方块是实际放置在世界中的方块
+  "processors": [
+    // 单个规则处理器列表
+    {
+      "processor_type": "minecraft:rule",
+
+      // 处理器所使用的规则
+      "rules": [
+        {
+          // 从nbt文件中读取方块
+          // 50%的概率将找到“石砖”方块进行替换
+          "input_predicate": {
+            "block": "minecraft:stone_bricks",
+            "probability": 0.5,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          // 此处默认“minecraft:always_true”
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          // 如果上方条件语句为“true”则放置实际方块，替换为“被虫蚀的方块”
+          "output_state": {
+            "Name": "minecraft:infested_stone_bricks"
+          }
+        },
+        {
+          // 5%的概率将找到的“石砖”方块进行替换
+          "input_predicate": {
+            "block": "minecraft:stone_bricks",
+            "probability": 0.05,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          // 替换为“绿宝石矿石”
+          "output_state": {
+            "Name": "minecraft:emerald_ore"
+          }
+        },
+        {
+          // 10%的概率将找到的“深板岩圆石”方块进行替换
+          "input_predicate": {
+            "block": "minecraft:cobbled_deepslate",
+            "probability": 0.1,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          // 如果目标替换方块具有属性，则必须定义块的所有属性
+          // “深层红石矿石”具有属性，也就是被激活后会改变形态
+          "output_state": {
+            "Name": "minecraft:deepslate_redstone_ore",
+            "Properties": {
+              "lit": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

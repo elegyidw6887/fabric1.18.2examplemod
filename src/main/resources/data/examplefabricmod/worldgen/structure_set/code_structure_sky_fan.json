@@ -1,0 +1,29 @@
+{
+  // 如果一个地点通过了放置检查，可以选择哪些结构来尝试生成
+  // 如果此列表中的两个或更多结构可以在生物群系中的某个位置生成，则选择基于重量的随机生成
+  "structures": [
+    {
+      // 所使用的“配置建筑物特征”的命名空间id
+      "structure": "examplefabricmod:code_structure_sky_fan",
+      // 建筑结构权重
+      "weight": 1
+    }
+  ],
+  // 列表中结构的放置方式
+  "placement": {
+
+    // 所使用的放置类型
+    // 放置类型共有两种，分别是“minecraft:random_spread”与“minecraft:concentric_rings”
+    // 后者的分布方式类似于“要塞”
+    "type": "minecraft:random_spread",
+
+    // 帮助随机生成的数组，需要确保这是唯一的并且不匹配任何其他结构集中的的“盐”
+    "salt": 1145141919,
+
+    // 两个结构之间的平均距离（单位为区块）
+    "spacing": 16,
+
+    // 两个结构之间的最小距离，必须小于 spacing（单位为区块）
+    "separation": 6
+  }
+}

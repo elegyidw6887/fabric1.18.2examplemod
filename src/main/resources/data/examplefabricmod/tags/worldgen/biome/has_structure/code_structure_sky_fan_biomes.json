@@ -1,0 +1,11 @@
+{
+  "replace": false,
+
+  "_comment": " 这个生物群系标签可以直接指定生物群系，要指定其他同类型的标签的时候需要添加“#” ",
+  "values": [
+    "#minecraft:is_mountain",
+    "#minecraft:is_ocean",
+    "#minecraft:is_deep_ocean",
+    "minecraft:swamp"
+  ]
+}
