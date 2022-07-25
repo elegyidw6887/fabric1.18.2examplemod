@@ -17,6 +17,7 @@ import examplefabricmod.util.ModFlammableBlocks;
 import examplefabricmod.util.ModStrippables;
 import examplefabricmod.world.feature.ModConfiguredFeatures;
 import examplefabricmod.world.gen.ModWorldGen;
+import examplefabricmod.world.structure.ModStructures;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,6 +62,8 @@ public class ExampleFabricMod implements ModInitializer {
         ModRecipes.registerModRecipes();
         // 模组世界生成配置
         ModWorldGen.generateModWorldGen();
+        // 模组建筑物生成
+        ModStructures.registerStructureFeatures();
 
         CubeEntity.r_CubeEntity();
 
