@@ -20,7 +20,6 @@
   "fallback": "minecraft:empty",
 
   // 一个可供选择的建筑结构列表，在这里，您可以列出尽可能多的 nbt 文件或放置的要素以生成。
-  // Do note that placed features needs a special element entry stuff.
   // 请注意，放置的功能需要特殊的元素条目。
   "elements": [
     {
