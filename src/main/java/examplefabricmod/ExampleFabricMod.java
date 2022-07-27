@@ -93,7 +93,6 @@ public class ExampleFabricMod implements ModInitializer {
             -mixin扩展
 
         3.世界生成
-            -自定义建筑
             -单个建筑结构
             -拼图建筑结构
 
