@@ -88,14 +88,6 @@ public class ExampleFabricMod implements ModInitializer {
 
         后续学习计划
 
-        2.进阶内容
-            -nbt数据扩展
-            -mixin扩展
-
-        3.世界生成
-            -单个建筑结构
-            -拼图建筑结构
-
         4.实体添加
             -使用GeckoLib自定义生物实体
             -幼年动物实体
@@ -103,9 +95,6 @@ public class ExampleFabricMod implements ModInitializer {
             -生物实体世界生成
             -自定义村民
             -使用使用GeckoLib制作3D盔甲
-
-        5.维度添加
-            -自定义维度添加
 
         6.个人计划
             -套装盔甲效果添加
