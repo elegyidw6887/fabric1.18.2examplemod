@@ -1,22 +1,13 @@
 package examplefabricmod.world.biome;
 
 import net.minecraft.sound.BiomeMoodSound;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 
 public class ExampleBiome {
-
-    private static int getSkyColor() {
-        float f = MathHelper.clamp(0.8f, -1.0f, 1.0f);
-        return MathHelper.hsvToRgb(0.62222224f - f * 0.05f, 0.5f + f * 0.1f, 1.0f);
-    }
-
-    private static final MaterialRules EXAMPLE_RULE = null;
 
     public static Biome createExampleBiome() {
 
@@ -48,7 +39,7 @@ public class ExampleBiome {
                         .waterColor(4159204)
                         .waterFogColor(329011)
                         .fogColor(12638463)
-                        .skyColor(getSkyColor())
+                        .skyColor(7843327)
                         .moodSound(BiomeMoodSound.CAVE)
                         .music(null)
                         .build())
