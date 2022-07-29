@@ -1,0 +1,12 @@
+{
+  "type": "examplefabricmod:example",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 167605728,
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "examplefabricmod:example_biome"
+    }
+  }
+}

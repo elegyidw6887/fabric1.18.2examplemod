@@ -15,13 +15,34 @@ import examplefabricmod.screen.ModScreenHandlers;
 import examplefabricmod.util.ModCustomTrades;
 import examplefabricmod.util.ModFlammableBlocks;
 import examplefabricmod.util.ModStrippables;
+import examplefabricmod.world.biome.ModBiomes;
+import examplefabricmod.world.dimension.ModDimensions;
 import examplefabricmod.world.feature.ModConfiguredFeatures;
 import examplefabricmod.world.gen.ModWorldGen;
 import examplefabricmod.world.structure.ModStructures;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+/*
 
+    WIKI与教程链接
+
+    1.Fabric官方wiki
+        https://fabricmc.net/wiki/start
+
+    2.Minecraft Wiki
+        https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki
+
+    3.Kaupenjoe油管教程
+        https://www.youtube.com/playlist?list=PLKGarocXCE1ECgBI1_Z_Yr4qMdhjVi3kg
+
+    4.GeckoLib官方github wiki
+        https://github.com/bernie-g/geckolib/wiki
+
+    5.Trinkets官方github wiki
+        https://github.com/emilyploszaj/trinkets/wiki
+
+*/
 public class ExampleFabricMod implements ModInitializer {
 
     public static final String MOD_ID = "examplefabricmod";
@@ -64,6 +85,10 @@ public class ExampleFabricMod implements ModInitializer {
         ModWorldGen.generateModWorldGen();
         // 模组建筑物生成
         ModStructures.registerStructureFeatures();
+        // 生物群系注册
+        ModBiomes.registerModBiomes();
+        // 维度注册
+        ModDimensions.registerModDimensions();
 
         CubeEntity.r_CubeEntity();
 
@@ -82,43 +107,10 @@ public class ExampleFabricMod implements ModInitializer {
 			模组开发中使用仿熔炉设计时可以放置左手进行放置
 			未解决
 
+		3.2022.7.29
+		    添加新生物群系的时候能够成功注册，并且在游戏内存在相关词条
+		    但是无法在世界中找到群系
+
 		 */
-
-        /*
-
-        后续学习计划
-
-        4.实体添加
-            -使用GeckoLib自定义生物实体
-            -幼年动物实体
-            -生物实体变体
-            -生物实体世界生成
-            -自定义村民
-            -使用使用GeckoLib制作3D盔甲
-
-        6.个人计划
-            -套装盔甲效果添加
-            -使用Trinkets添加遗物槽
-            -添加拥有多种效果的遗物
-
-         */
-
-        /*
-
-        WIKI与教程链接
-
-        1.Fabric官方wiki
-            https://fabricmc.net/wiki/start
-
-        2.Kaupenjoe油管教程
-            https://www.youtube.com/playlist?list=PLKGarocXCE1ECgBI1_Z_Yr4qMdhjVi3kg
-
-        3.GeckoLib官方github wiki
-            https://github.com/bernie-g/geckolib/wiki
-
-        4.Trinkets官方github wiki
-            https://github.com/emilyploszaj/trinkets/wiki
-
-         */
     }
 }

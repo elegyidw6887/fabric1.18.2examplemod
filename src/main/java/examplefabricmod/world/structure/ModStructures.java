@@ -12,5 +12,7 @@ public class ModStructures {
     public static void registerStructureFeatures() {
 
         StructureFeatureAccessor.callRegister(ExampleFabricMod.MOD_ID + ":sky_structure", SKY_STRUCTURE, GenerationStep.Feature.SURFACE_STRUCTURES);
+
+        ExampleFabricMod.LOGGER.info("Registering ModStructures for " + ExampleFabricMod.MOD_ID);
     }
 }
