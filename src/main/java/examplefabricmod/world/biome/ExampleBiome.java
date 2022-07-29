@@ -11,12 +11,15 @@ public class ExampleBiome {
 
     public static Biome createExampleBiome() {
 
+        // 设置对象创建
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         GenerationSettings.Builder builder2 = new GenerationSettings.Builder();
 
+        // 生物生成
         DefaultBiomeFeatures.addPlainsMobs(builder);
         DefaultBiomeFeatures.addMonsters(builder, 100, 20, 100, false);
 
+        // 生物群系特征添加
         DefaultBiomeFeatures.addLandCarvers(builder2);
         DefaultBiomeFeatures.addAmethystGeodes(builder2);
         DefaultBiomeFeatures.addDungeons(builder2);
@@ -30,6 +33,7 @@ public class ExampleBiome {
         DefaultBiomeFeatures.addDefaultMushrooms(builder2);
         DefaultBiomeFeatures.addDefaultVegetation(builder2);
 
+        // 返回具体参数
         return (new Biome.Builder())
                 .precipitation(Biome.Precipitation.RAIN)
                 .category(Biome.Category.PLAINS)
