@@ -9,15 +9,37 @@ import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 
 public class ExampleBiome {
 
-    public static Biome createExampleBiome() {
+    public static Biome EXAMPLE_BIOME = (new Biome.Builder())
+            .precipitation(Biome.Precipitation.RAIN)
+                .category(Biome.Category.PLAINS)
+                .temperature(0.8f)
+                .downfall(0.5f)
+                .effects(new BiomeEffects.Builder()
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .skyColor(7843327)
+                        .moodSound(BiomeMoodSound.CAVE)
+                        .music(null)
+                        .build())
+            .spawnSettings(spawnSettings())
+            .generationSettings(generationSettings())
+            .build();
 
-        // 设置对象创建
+    private static SpawnSettings spawnSettings() {
+
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        GenerationSettings.Builder builder2 = new GenerationSettings.Builder();
 
         // 生物生成
         DefaultBiomeFeatures.addPlainsMobs(builder);
         DefaultBiomeFeatures.addMonsters(builder, 100, 20, 100, false);
+
+        return builder.build();
+    }
+
+    private static GenerationSettings generationSettings() {
+
+        GenerationSettings.Builder builder2 = new GenerationSettings.Builder();
 
         // 生物群系特征添加
         DefaultBiomeFeatures.addLandCarvers(builder2);
@@ -33,22 +55,6 @@ public class ExampleBiome {
         DefaultBiomeFeatures.addDefaultMushrooms(builder2);
         DefaultBiomeFeatures.addDefaultVegetation(builder2);
 
-        // 返回具体参数
-        return (new Biome.Builder())
-                .precipitation(Biome.Precipitation.RAIN)
-                .category(Biome.Category.PLAINS)
-                .temperature(0.8f)
-                .downfall(0.5f)
-                .effects(new BiomeEffects.Builder()
-                        .waterColor(4159204)
-                        .waterFogColor(329011)
-                        .fogColor(12638463)
-                        .skyColor(7843327)
-                        .moodSound(BiomeMoodSound.CAVE)
-                        .music(null)
-                        .build())
-                .spawnSettings(builder.build())
-                .generationSettings(builder2.build())
-                .build();
+        return builder2.build();
     }
 }
