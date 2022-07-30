@@ -5,8 +5,45 @@
     "seed": 167605728,
     "settings": "minecraft:overworld",
     "biome_source": {
-      "type": "minecraft:fixed",
-      "biome": "examplefabricmod:example_biome"
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "minecraft:badlands",
+          "parameters": {
+            "temperature": 0.2,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 2,
+            "depth": 1,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "examplefabricmod:example_biome",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 1,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "minecraft:flower_forest",
+          "parameters": {
+            "temperature": 0.3,
+            "humidity": 0,
+            "continentalness": 1,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 1,
+            "offset": 0
+          }
+        }
+      ]
     }
   }
 }
