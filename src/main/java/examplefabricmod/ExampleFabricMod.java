@@ -36,12 +36,6 @@ import org.slf4j.LoggerFactory;
     3.Kaupenjoe油管教程
         https://www.youtube.com/playlist?list=PLKGarocXCE1ECgBI1_Z_Yr4qMdhjVi3kg
 
-    4.GeckoLib官方github wiki
-        https://github.com/bernie-g/geckolib/wiki
-
-    5.Trinkets官方github wiki
-        https://github.com/emilyploszaj/trinkets/wiki
-
 */
 public class ExampleFabricMod implements ModInitializer {
 
