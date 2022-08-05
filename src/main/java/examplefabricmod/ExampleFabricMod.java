@@ -4,7 +4,6 @@ import examplefabricmod.block.ModBlockEntities;
 import examplefabricmod.block.ModBlocks;
 import examplefabricmod.effect.ModEffects;
 import examplefabricmod.enchantment.ModEnchantments;
-import examplefabricmod.entity.CubeEntity.CubeEntity;
 import examplefabricmod.fluid.ModFluids;
 import examplefabricmod.item.ModFuels;
 import examplefabricmod.item.ModItems;
@@ -83,8 +82,6 @@ public class ExampleFabricMod implements ModInitializer {
         ModBiomes.registerModBiomes();
         // 维度注册
         ModDimensions.registerModDimensions();
-
-        CubeEntity.r_CubeEntity();
 
         LOGGER.info("Hello Fabric world!");
 
