@@ -2,7 +2,6 @@ package examplefabricmod.item;
 
 import examplefabricmod.ExampleFabricMod;
 import examplefabricmod.block.ModBlocks;
-import examplefabricmod.entity.CubeEntity.CubeEntity;
 import examplefabricmod.fluid.ModFluids;
 import examplefabricmod.sound.ModSounds;
 import examplefabricmod.util.ModItemGroup;
@@ -69,10 +68,6 @@ public class ModItems {
     // 血桶物品
     public static final Item BLOOD_BUCKET = registerItem("blood_bucket",
             new BucketItem(ModFluids.STILL_BLOOD, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).group(ModItemGroup.LOSTsMOD)));
-    // 实体刷怪蛋物品
-    public static final Item CUBE_ENTITY_EGG = registerItem("cube_entity_egg",
-            new SpawnEggItem(CubeEntity.CUBE_ENTITY,
-                    12895428, 11382189, new Item.Settings().group(ModItemGroup.LOSTsMOD)));
 
 
     private static Item registerItem(String name, Item item) { // 注册物品

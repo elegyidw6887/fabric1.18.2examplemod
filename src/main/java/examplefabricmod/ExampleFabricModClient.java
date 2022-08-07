@@ -1,9 +1,6 @@
 package examplefabricmod;
 
 import examplefabricmod.block.ModBlocks;
-import examplefabricmod.entity.CubeEntity.CubeEntity;
-import examplefabricmod.entity.CubeEntity.CubeEntityModel;
-import examplefabricmod.entity.CubeEntity.CubeEntityRenderer;
 import examplefabricmod.fluid.ModFluids;
 import examplefabricmod.screen.InjectionBenchScreen;
 import examplefabricmod.screen.ModScreenHandlers;
@@ -12,8 +9,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
@@ -51,8 +46,5 @@ public class ExampleFabricModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.INJECTION_BENCH, RenderLayer.getCutout());
         // 注入工作台gui渲染
         ScreenRegistry.register(ModScreenHandlers.INJECTION_BENCH_SCREEN_HANDLER, InjectionBenchScreen::new);
-
-        EntityRendererRegistry.register(CubeEntity.CUBE_ENTITY, CubeEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, CubeEntityModel::getTexturedModelData);
     }
 }
