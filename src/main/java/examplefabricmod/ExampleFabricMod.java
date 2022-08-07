@@ -43,7 +43,24 @@ public class ExampleFabricMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+		/*
 
+		Fabric学习过程中出现的问题
+
+		1.2022.5.16
+			在添加自定义树叶的时候，树叶无法正常进行渲染，在游戏内会显示紫黑色方块
+			未解决
+
+		2.2022.6.4
+			注入工作台在使用BB制作的模型后放在左手进行放置的时候游戏会弹出并报错
+			模组开发中使用仿熔炉设计时可以放置左手进行放置
+			未解决
+
+		3.2022.7.29
+		    添加新生物群系的时候能够成功注册，并且在游戏内存在相关词条
+		    但是无法在世界中找到群系
+
+		 */
         // 模组配置功能注册
         ModConfiguredFeatures.registerModConfiguredFeatures();
         // 模组物品注册
@@ -84,24 +101,5 @@ public class ExampleFabricMod implements ModInitializer {
         ModDimensions.registerModDimensions();
 
         LOGGER.info("Hello Fabric world!");
-
-		/*
-
-		Fabric学习过程中出现的问题
-
-		1.2022.5.16
-			在添加自定义树叶的时候，树叶无法正常进行渲染，在游戏内会显示紫黑色方块
-			未解决
-
-		2.2022.6.4
-			注入工作台在使用BB制作的模型后放在左手进行放置的时候游戏会弹出并报错
-			模组开发中使用仿熔炉设计时可以放置左手进行放置
-			未解决
-
-		3.2022.7.29
-		    添加新生物群系的时候能够成功注册，并且在游戏内存在相关词条
-		    但是无法在世界中找到群系
-
-		 */
     }
 }
