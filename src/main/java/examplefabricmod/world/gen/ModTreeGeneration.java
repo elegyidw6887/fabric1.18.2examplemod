@@ -8,6 +8,8 @@ import net.minecraft.world.gen.GenerationStep;
 public class ModTreeGeneration {
 
     public static void generateTrees() {
+
+        // 蓝花楹树的生成
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.JACARANDA_PLACED.getKey().get());
     }

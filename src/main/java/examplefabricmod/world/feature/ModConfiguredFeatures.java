@@ -17,13 +17,14 @@ import java.util.List;
 public class ModConfiguredFeatures {
 
     // CF -> PF -> CF -> PF
+    // 蓝花楹树的配置（3/4）
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> JACARANDA_TREE =
             ConfiguredFeatures.register("jacaranda_tree", Feature.TREE,
                     new TreeFeatureConfig
                             .Builder(
                             BlockStateProvider.of(ModBlocks.JACARANDA_LOG),
                             new StraightTrunkPlacer(5, 6, 3),
-                            BlockStateProvider.of(Blocks.ACACIA_LEAVES),
+                            BlockStateProvider.of(Blocks.OAK_LEAVES),
                             new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 4),
                             new TwoLayersFeatureSize(1, 0, 2))
                             .dirtProvider(BlockStateProvider.of(ModBlocks.AMETHYST_BLOCK))

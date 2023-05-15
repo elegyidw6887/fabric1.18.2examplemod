@@ -12,6 +12,7 @@ import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
 public class ModPlacedFeatures {
 
+    // 蓝花楹树的配置（4/4）
     public static final RegistryEntry<PlacedFeature> JACARANDA_PLACED =
             PlacedFeatures.register("jacaranda_vegetation", ModConfiguredFeatures.JACARANDA_SPAWN,
                     VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1F, 2)));

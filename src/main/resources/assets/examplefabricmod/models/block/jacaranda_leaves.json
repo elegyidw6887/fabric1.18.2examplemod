@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "examplefabricmod:block/jacaranda_leaves"
+  }
+}

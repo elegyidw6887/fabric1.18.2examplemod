@@ -40,11 +40,13 @@ public class ExampleFabricModClient implements ClientModInitializer {
                         SimpleFluidRenderHandler.WATER_FLOWING,
                         SimpleFluidRenderHandler.WATER_OVERLAY,
                         0xDC143C));
+        // 树叶的渲染
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.JACARANDA_LEAVES, RenderLayer.getCutout());
         // 树苗的渲染
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.JACARANDA_SAPLING, RenderLayer.getCutout());
         // 注入工作台的渲染
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.INJECTION_BENCH, RenderLayer.getCutout());
-        // 注入工作台gui渲染
+        // 注入工作台GUI渲染
         ScreenRegistry.register(ModScreenHandlers.INJECTION_BENCH_SCREEN_HANDLER, InjectionBenchScreen::new);
     }
 }

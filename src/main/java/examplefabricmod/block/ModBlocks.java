@@ -62,6 +62,9 @@ public class ModBlocks {
     // 木板方块
     public static final Block JACARANDA_PLANKS = registerBlock("jacaranda_planks",
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).strength(4.0F).requiresTool()), ModItemGroup.LOSTsMOD);
+    // 树叶方块
+    public static final Block JACARANDA_LEAVES = registerBlock("jacaranda_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).nonOpaque()), ModItemGroup.LOSTsMOD);
     // 树苗方块
     public static final Block JACARANDA_SAPLING = registerBlock("jacaranda_sapling",
             new ModSaplingBlock(new JacarandaSaplingGenerator(),
