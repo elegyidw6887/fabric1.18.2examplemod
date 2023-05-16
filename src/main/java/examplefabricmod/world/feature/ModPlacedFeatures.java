@@ -17,6 +17,7 @@ public class ModPlacedFeatures {
             PlacedFeatures.register("jacaranda_vegetation", ModConfiguredFeatures.JACARANDA_SPAWN,
                     VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1F, 2)));
 
+    // 丁香花的配置（2/2）
     public static final RegistryEntry<PlacedFeature> LILAC_PLACED =
             PlacedFeatures.register("lilac_placed",
                     ModConfiguredFeatures.LILAC_FLOWER,
