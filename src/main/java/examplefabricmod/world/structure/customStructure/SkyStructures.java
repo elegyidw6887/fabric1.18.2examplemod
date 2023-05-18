@@ -1,7 +1,10 @@
-package examplefabricmod.world.structure;
+package examplefabricmod.world.structure.customStructure;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import examplefabricmod.ExampleFabricMod;
 import net.minecraft.structure.*;
+import net.minecraft.structure.pool.StructurePool;
 import net.minecraft.structure.pool.StructurePoolBasedGenerator;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -13,36 +16,30 @@ import java.util.Optional;
 
 public class SkyStructures extends StructureFeature<StructurePoolFeatureConfig> {
 
+    // 一个自定义编解码器，用于更改 code_structure_sky_fan.json 配置的大小限制，使其不以 7 为上限。
+    // 有了这个，如果我们想在结构中拥有极长的零件分支，我们可以拥有一个大小限制为 30 的结构。
+    public static final Codec<StructurePoolFeatureConfig> CODEC = RecordCodecBuilder.create(
+            instance -> instance.group(
+                            StructurePool.REGISTRY_CODEC.fieldOf("start_pool").forGetter(StructurePoolFeatureConfig::getStartPool),
+                            Codec.intRange(0, 30).fieldOf("size").forGetter(StructurePoolFeatureConfig::getSize)
+                    )
+                    .apply(instance, StructurePoolFeatureConfig::new)
+    );
+
     public SkyStructures() {
-        super(StructurePoolFeatureConfig.CODEC, SkyStructures::createPiecesGenerator, PostPlacementProcessor.EMPTY);
+
+        // 创建结构的碎片布局并将其提供给游戏
+        super(CODEC, SkyStructures::createPiecesGenerator, PostPlacementProcessor.EMPTY);
     }
 
     /**
      * 这是可以用于额外检查来决定我们的建筑结构能否生成的方法,只有我们需要添加额外的生成条件的时候再去重载这个方法。
-     *
      * （只有我们将建筑物间隔设置为0/1的时候该方法才会在世界上某些区块坐标返回true）
-     *
      * 基本上这个方法基于确定区块是否满足我们需要的高度，或者距离其他建筑结构太近，又或者有其他的限制条件。
-     *
      * 比如，“Pillager Outposts”添加了一个生成条件来让建筑物不会生成在村庄的10个区块之内。
-     *
-     * This is where extra checks can be done to determine if the structure can spawn here.
-     * This only needs to be overridden if you're adding additional spawn conditions.
-     *
-     * Fun fact, if you set your structure separation/spacing to be 0/1, you can use
-     * isFeatureChunk to return ture only if certain chunk coordinates in the world.
-     *
-     * Basically, this method is use for determining if the land is at a suitable height,
-     * if certain other structures are toot close or not, or some other restrictive condition.
-     *
-     * For example, Pillager Outposts added a check to make sure it cannot spawn within 10 chunk of a Village.
-     * (Bedrock Edition seems to not have the same check)
-     *
-     * If you are doing  Nether structure,you'll probably want to spawn your structure on top of ledges.
-     * Beat way to do that is to use getBaseColum to grab a colum of blocks at the structure's x/z position.
-     * The loop through it and look for land with air above it and set blockpos's Y value to it.
-     * Make sure to set the final boolean in JigsawPlacement.addPieces to false so that the structure spawns at
-     * blockpos's y value instead of placing the structure on the Bedrock roof!
+     * 如果正在做下界结构，你可能想在壁架上生成你的结构。做到这一点的方法是使用 getBaseColum 在结构的 xz 位置抓取一列块块。
+     * 环形穿过它并寻找上方有空气的土地，并将blockpos的Y值设置为它。
+     * 确保将StructurePoolBasedGenerator.generate中的最后一个布尔值设置为 false，以便结构在blockpos的y值处生成，而不是将结构放置在基岩屋顶上！
      */
     private static boolean isFeatureChunk(StructureGeneratorFactory.Context<StructurePoolFeatureConfig> context) {
 

@@ -7,7 +7,7 @@
     // 要使用的模板池json文件的路径
     // 此为基于拼图的结构（作用方式等同于villager），模板池的命名空间id，从这里开始生成
     // 对于其他结构可以不使用此部分内容
-    "start_pool": "examplefabricmod:sky_fan/start_pool",
+    "start_pool": "examplefabricmod:sky_fan",
 
     // 拼图结构生成的深度，值为0到7之间
     "size": 1
