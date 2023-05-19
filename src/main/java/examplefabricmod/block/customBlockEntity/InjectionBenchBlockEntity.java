@@ -27,6 +27,7 @@ import java.util.Optional;
 
 public class InjectionBenchBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
 
+    // 泛型为“物品栈”的List对象，用于设定我们的工作台的槽位
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
     // size表示不同的插槽个数
 
@@ -38,6 +39,8 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
 
     public InjectionBenchBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.INJECTION_BENCH, pos, state);
+        /*属性委托表示整数属性的索引列表。
+         属性委托用于在屏幕中显示整数值，例如熔炉中的进度条。*/
         this.propertyDelegate = new PropertyDelegate() {
             @Override
             public int get(int index) {
@@ -67,17 +70,20 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
         };
     }
 
+    // 获取物品方法
     @Override
     public DefaultedList<ItemStack> getItems() {
         return inventory;
     }
 
+    // 显示名称方法
     @Override
     public Text getDisplayName() {
         // 翻译键
         return new LiteralText("injection_bench");
     }
 
+    // 创建菜单方法
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
@@ -85,9 +91,9 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
         return new InjectionBenchScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
 
+    // 读取nbt数据方法
     @Override
     public void readNbt(NbtCompound nbt) {
-        // 读取nbt数据
         // 读取玩家的物品栏
         Inventories.readNbt(nbt, inventory); // 直接调用“Inventories”类中的方法
         super.readNbt(nbt);
@@ -97,9 +103,9 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
         maxFuelTime = nbt.getInt("bench.maxFuelTime");
     }
 
+    // 写入nbt数据方法
     @Override
     protected void writeNbt(NbtCompound nbt) {
-        // 写入nbt数据
         super.writeNbt(nbt);
         // 将读取到的玩家物品栏保存到标签中
         Inventories.writeNbt(nbt, inventory); // 直接调用“Inventories”类中的方法
@@ -109,8 +115,8 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
         nbt.putInt("bench.maxFuelTime", maxFuelTime);
     }
 
+    // 燃料消耗方法
     private void consumeFuel() {
-        // 燃料消耗方法
         if (!getStack(0).isEmpty()) {
             // 获取燃料的燃料值
             this.fuelTime = FuelRegistry.INSTANCE.get(this.removeStack(0, 1).getItem());
@@ -147,13 +153,13 @@ public class InjectionBenchBlockEntity extends BlockEntity implements NamedScree
         }
     }
 
+    // 判断燃料槽中是否有燃料方法
     private static boolean hasFuelInFuelSlot(InjectionBenchBlockEntity entity) {
-        // 判断燃料槽中是否有燃料
         return !entity.getStack(0).isEmpty();
     }
 
+    // 判断是否需要消耗燃料方法
     private static boolean isConsumingFuel(InjectionBenchBlockEntity entity) {
-        // 判断是否需要消耗燃料
         return entity.fuelTime > 0;
     }
 

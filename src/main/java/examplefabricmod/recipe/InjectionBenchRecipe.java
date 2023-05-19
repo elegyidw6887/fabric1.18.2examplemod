@@ -18,12 +18,14 @@ public class InjectionBenchRecipe implements Recipe<SimpleInventory> {
     private final ItemStack output;
     private final DefaultedList<Ingredient> recipeItems;
 
+    // 构造方法
     public InjectionBenchRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
     }
 
+    // 匹配方法
     @Override
     public boolean matches(SimpleInventory inventory, World world) { // 如果要修改配方，此处为需要修改的方法1
         if (world.isClient) {
@@ -35,31 +37,37 @@ public class InjectionBenchRecipe implements Recipe<SimpleInventory> {
         return false;
     }
 
+    // 制作方法
     @Override
     public ItemStack craft(SimpleInventory inventory) {
         return output;
     }
 
+    // 适配方法
     @Override
     public boolean fits(int width, int height) {
         return true;
     }
 
+    // 获取输出方法
     @Override
     public ItemStack getOutput() {
         return output.copy();
     }
 
+    // 获取ID方法
     @Override
     public Identifier getId() {
         return id;
     }
 
+    // 获取串行器方法
     @Override
     public RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
 
+    // 获取类型方法
     @Override
     public RecipeType<?> getType() {
         return Type.INSTANCE;

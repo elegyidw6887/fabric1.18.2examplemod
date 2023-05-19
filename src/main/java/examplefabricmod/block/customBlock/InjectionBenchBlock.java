@@ -53,6 +53,7 @@ public class InjectionBenchBlock extends BlockWithEntity implements BlockEntityP
     }
 
     /* 方块实体类“BlockWithEntity”重载方法 */
+    // 创建方块实体方法
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
@@ -60,12 +61,14 @@ public class InjectionBenchBlock extends BlockWithEntity implements BlockEntityP
         return new InjectionBenchBlockEntity(pos, state);
     }
 
+    // 获取渲染类型方法
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         // 实现参考“AbstractFurnaceBlock”类中的实现方法
         return BlockRenderType.MODEL;
     }
 
+    // 状态替换方法
     @Override
     public void onStateReplaced(@NotNull BlockState state, World world, BlockPos pos, @NotNull BlockState newState, boolean moved) {
         // 当方块状态出现更改时将其中的物品抛出的方法
@@ -80,6 +83,7 @@ public class InjectionBenchBlock extends BlockWithEntity implements BlockEntityP
         }
     }
 
+    // 实体使用方法
     @Override
     public ActionResult onUse(BlockState state, @NotNull World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         // 用于打开实体GUI的方法
@@ -92,6 +96,7 @@ public class InjectionBenchBlock extends BlockWithEntity implements BlockEntityP
         return ActionResult.SUCCESS;
     }
 
+    // 获取“刻”方法
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {

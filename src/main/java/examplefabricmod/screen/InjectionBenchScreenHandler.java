@@ -17,13 +17,13 @@ public class InjectionBenchScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
 
+    // 构造方法1
     public InjectionBenchScreenHandler(int syncId, PlayerInventory playerInventory) {
-        // 构造方法1
         this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(4));
     }
 
+    // 构造方法2
     public InjectionBenchScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
-        // 构造方法2
         super(ModScreenHandlers.INJECTION_BENCH_SCREEN_HANDLER, syncId);
         checkSize(inventory, 4);
         this.inventory = inventory;
@@ -101,8 +101,8 @@ public class InjectionBenchScreenHandler extends ScreenHandler {
         return newStack;
     }
 
+    // 用于读取玩家物品栏并添加到GUI中
     private void addPlayerInventory(PlayerInventory playerInventory) {
-        // 用于读取玩家物品栏并添加到GUI中
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
                 this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
@@ -110,8 +110,8 @@ public class InjectionBenchScreenHandler extends ScreenHandler {
         }
     }
 
+    // 用于读取玩家快捷栏并添加到GUI中
     private void addPlayerHotbar(PlayerInventory playerInventory) {
-        // 用于读取玩家快捷栏并添加到GUI中
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
         }
