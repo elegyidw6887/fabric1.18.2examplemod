@@ -27,28 +27,32 @@ public class InjectionBenchBlock extends BlockWithEntity implements BlockEntityP
         super(settings);
     }
 
+    /* 方块类“Block”方法 */
     @Nullable
     @Override
     public BlockState getPlacementState(@NotNull ItemPlacementContext ctx) {
         return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
     }
 
+    // 与“AbstractFurnaceBlock”抽象类中相同
     @Override
     public BlockState rotate(@NotNull BlockState state, @NotNull BlockRotation rotation) {
         return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
 
+    // 与“AbstractFurnaceBlock”抽象类中相同
     @Override
     public BlockState mirror(@NotNull BlockState state, @NotNull BlockMirror mirror) {
         return state.rotate(mirror.getRotation(state.get(FACING)));
     }
 
+    // 与“AbstractFurnaceBlock”抽象类中相同，但少传入一个Boolean参数
     @Override
     protected void appendProperties(StateManager.@NotNull Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
 
-    /* 方块实体方法 */
+    /* 方块实体类“BlockWithEntity”重载方法 */
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
