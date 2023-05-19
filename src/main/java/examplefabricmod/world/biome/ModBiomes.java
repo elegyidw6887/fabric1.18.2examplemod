@@ -12,9 +12,8 @@ import java.util.Map;
 
 public class ModBiomes {
 
+    // 存储生物群系key与生物群系对象的map对象
     public static final Map<RegistryKey<Biome>, Biome> BIOMES = new HashMap<>();
-
-    public static final RegistryKey<Biome> EXAMPLE_BIOME = add("example_biome", ExampleBiome.EXAMPLE_BIOME);
 
     private static RegistryKey<Biome> add(String string, Biome biome) {
 
@@ -24,6 +23,8 @@ public class ModBiomes {
 
         return key;
     }
+
+    public static final RegistryKey<Biome> EXAMPLE_BIOME = add("example_biome", ExampleBiome.EXAMPLE_BIOME);
 
     public static void registerModBiomes() {
 

@@ -11,7 +11,7 @@ public class ExampleBiome {
 
     public static Biome EXAMPLE_BIOME = (new Biome.Builder())
             .precipitation(Biome.Precipitation.RAIN)
-                .category(Biome.Category.PLAINS)
+                .category(Biome.Category.NONE)
                 .temperature(0.8f)
                 .downfall(0.5f)
                 .effects(new BiomeEffects.Builder()
@@ -26,6 +26,7 @@ public class ExampleBiome {
             .generationSettings(generationSettings())
             .build();
 
+    // 生物生成方法
     private static SpawnSettings spawnSettings() {
 
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
@@ -37,6 +38,7 @@ public class ExampleBiome {
         return builder.build();
     }
 
+    // 生物群系特征添加方法
     private static GenerationSettings generationSettings() {
 
         GenerationSettings.Builder builder2 = new GenerationSettings.Builder();

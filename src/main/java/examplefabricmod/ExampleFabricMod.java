@@ -59,6 +59,8 @@ public class ExampleFabricMod implements ModInitializer {
 		3.2022.7.29
 		    添加新生物群系的时候能够成功注册，并且在游戏内存在相关词条
 		    但是无法在世界中找到群系
+		    2023.5.20
+		    生物群系无法正常生成原因为未能添加到生成池中，正在根据fabric官方api进行修复
 
 		 */
         // 模组配置功能注册
