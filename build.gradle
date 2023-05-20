@@ -16,15 +16,10 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
-	maven {
-		url = "https://maven.kyrptonaught.dev"
-	}
-	maven {
-		url = 'https://maven.aliyun.com/nexus/content/groups/public'
-	}
-	maven {
-		url = 'https://repository.hanbings.io/proxy'
-	}
+	maven { url = "https://maven.kyrptonaught.dev" }
+	maven { url = 'https://maven.aliyun.com/nexus/content/groups/public' }
+	maven { url = 'https://repository.hanbings.io/proxy' }
+	maven { url = 'https://maven.minecraftforge.net/' }
 }
 
 dependencies {
@@ -38,6 +33,8 @@ dependencies {
 
 	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta52-1.18'
 	include 'net.kyrptonaught:customportalapi:0.0.1-beta52-1.18'
+
+	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.18.2-1.1.0.102'
 }
 
 processResources {
