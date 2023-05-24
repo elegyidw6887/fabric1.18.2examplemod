@@ -22,20 +22,7 @@ import examplefabricmod.world.structure.ModStructures;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-/*
 
-    WIKI与教程链接
-
-    1.Fabric官方wiki
-        https://fabricmc.net/wiki/start
-
-    2.Minecraft Wiki
-        https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki
-
-    3.Kaupenjoe油管教程
-        https://www.youtube.com/playlist?list=PLKGarocXCE1ECgBI1_Z_Yr4qMdhjVi3kg
-
-*/
 public class ExampleFabricMod implements ModInitializer {
 
     public static final String MOD_ID = "examplefabricmod";
