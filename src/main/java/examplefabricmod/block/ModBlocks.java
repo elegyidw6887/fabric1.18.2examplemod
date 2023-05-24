@@ -64,7 +64,7 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).strength(4.0F).requiresTool()), ModItemGroup.LOSTsMOD);
     // 树叶方块
     public static final Block JACARANDA_LEAVES = registerBlock("jacaranda_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).nonOpaque()), ModItemGroup.LOSTsMOD);
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.AZALEA_LEAVES).nonOpaque()), ModItemGroup.LOSTsMOD);
     // 树苗方块
     public static final Block JACARANDA_SAPLING = registerBlock("jacaranda_sapling",
             new ModSaplingBlock(new JacarandaSaplingGenerator(),
@@ -73,28 +73,27 @@ public class ModBlocks {
     public static final Block INJECTION_BENCH = registerBlock("injection_bench",
             new InjectionBenchBlock(FabricBlockSettings.of(Material.METAL).requiresTool().nonOpaque()), ModItemGroup.LOSTsMOD);
 
-
+    // 调用类中方块相关物品对象注册方法，同时做到方块与方块相关物品对象的注册
     private static Block registerBlock(String name, Block block, ItemGroup itemGroup) { // 注册方块的同时注册一个对应的物品
-        // 调用类中方块相关物品对象注册方法，同时做到方块与方块相关物品对象的注册
         registerBlockItem(name, block, itemGroup);
         return Registry.register(Registry.BLOCK, new Identifier(ExampleFabricMod.MOD_ID, name), block);
     }
-
+    // 调用类中方块相关物品对象注册方法，进行方块与方块相关物品对象的注册，同时添加物品提示
     private static Block registerBlockWithTooltip(String name, Block block, ItemGroup itemGroup, String tooltips) { // 注册方块的同时注册一个有物品提示的对应物品
-        // 调用类中方块相关物品对象注册方法，同时做到方块与方块相关物品对象的注册
         registerBlockItemWithTooltip(name, block, itemGroup, tooltips);
         return Registry.register(Registry.BLOCK, new Identifier(ExampleFabricMod.MOD_ID, name), block);
     }
-
+    // 调用类中方块相关物品对象注册方法，同时不进行方块相关物品对象的注册
     private static Block registerBlockWithoutBlockItem(String name, Block block) { // 注册方块的同时不进行物品的注册
         return Registry.register(Registry.BLOCK, new Identifier(ExampleFabricMod.MOD_ID, name), block);
     }
 
+    // 方块物品注册方法
     private static void registerBlockItem(String name, Block block, ItemGroup itemGroup) { // 注册与方块对应的物品
         Registry.register(Registry.ITEM, new Identifier(ExampleFabricMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(itemGroup)));
     }
-
+    // 方块物品与物品提示注册方法
     private static void registerBlockItemWithTooltip(String name, Block block, ItemGroup itemGroup, String tooltips) { // 注册与方块对应并且有物品提示的物品
         Registry.register(Registry.ITEM, new Identifier(ExampleFabricMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(itemGroup)) {
