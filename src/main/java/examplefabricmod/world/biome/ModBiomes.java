@@ -22,8 +22,7 @@ public class ModBiomes {
         Registry.register(BuiltinRegistries.BIOME, THE_SAME_AS_PLAIN.getValue(), TheSameAsPlain.THE_SAME_AS_PLAIN);
 
         // 调用API来实现自定义生物群系的生成
-        Regions.register(new ModRegions(new Identifier(ExampleFabricMod.MOD_ID, "example_biome"),
-                RegionType.OVERWORLD, 2));
+        Regions.register(new ModRegions(new Identifier(ExampleFabricMod.MOD_ID, "example_biome"), RegionType.OVERWORLD, 2));
 
         ExampleFabricMod.LOGGER.info("Registering ModBiomes for " + ExampleFabricMod.MOD_ID);
     }

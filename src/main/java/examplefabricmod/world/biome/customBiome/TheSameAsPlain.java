@@ -11,7 +11,7 @@ public class TheSameAsPlain {
 
     public static Biome THE_SAME_AS_PLAIN = (new Biome.Builder())
             .precipitation(Biome.Precipitation.RAIN)
-                .category(Biome.Category.NONE)
+                .category(Biome.Category.PLAINS)
                 .temperature(0.8f)
                 .downfall(0.5f)
                 .effects(new BiomeEffects.Builder()
