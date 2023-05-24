@@ -19,7 +19,7 @@ public class ModBiomes {
 
         Registry.register(BuiltinRegistries.BIOME, THE_SAME_AS_PLAIN.getValue(), TheSameAsPlain.THE_SAME_AS_PLAIN);
 
-        Regions.register(new ModRegion(new Identifier(ExampleFabricMod.MOD_ID, "example_mod_custom_biome"),
+        Regions.register(new ModRegions(new Identifier(ExampleFabricMod.MOD_ID, "example_mod_custom_biome"),
                 RegionType.OVERWORLD, 2));
 
         ExampleFabricMod.LOGGER.info("Registering ModBiomes for " + ExampleFabricMod.MOD_ID);

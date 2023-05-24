@@ -12,9 +12,9 @@ import terrablender.api.RegionType;
 
 import java.util.function.Consumer;
 
-public class ModRegion extends Region {
+public class ModRegions extends Region {
 
-    public ModRegion(Identifier name, RegionType type, int weight) {
+    public ModRegions(Identifier name, RegionType type, int weight) {
         super(name, type, weight);
     }
 
