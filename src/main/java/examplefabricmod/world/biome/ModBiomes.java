@@ -1,20 +1,26 @@
 package examplefabricmod.world.biome;
 
 import examplefabricmod.ExampleFabricMod;
+import examplefabricmod.world.biome.customBiome.TheSameAsPlain;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
+import terrablender.api.RegionType;
+import terrablender.api.Regions;
 
 public class ModBiomes {
 
-    private static final RegistryKey<Biome> EXAMPLE_BIOME = RegistryKey.of(Registry.BIOME_KEY,
-            new Identifier(ExampleFabricMod.MOD_ID, "example_biome"));
+    public static final RegistryKey<Biome> THE_SAME_AS_PLAIN = RegistryKey.of(Registry.BIOME_KEY,
+            new Identifier(ExampleFabricMod.MOD_ID, "the_same_as_plain"));
 
     public static void registerModBiomes() {
 
-        Registry.register(BuiltinRegistries.BIOME, EXAMPLE_BIOME.getValue(), ExampleBiome.EXAMPLE_BIOME);
+        Registry.register(BuiltinRegistries.BIOME, THE_SAME_AS_PLAIN.getValue(), TheSameAsPlain.THE_SAME_AS_PLAIN);
+
+        Regions.register(new ModRegion(new Identifier(ExampleFabricMod.MOD_ID, "example_mod_custom_biome"),
+                RegionType.OVERWORLD, 2));
 
         ExampleFabricMod.LOGGER.info("Registering ModBiomes for " + ExampleFabricMod.MOD_ID);
     }

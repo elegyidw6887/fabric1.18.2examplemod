@@ -1,4 +1,4 @@
-package examplefabricmod.world.biome;
+package examplefabricmod.world.biome.customBiome;
 
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.world.biome.Biome;
@@ -7,9 +7,9 @@ import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 
-public class ExampleBiome {
+public class TheSameAsPlain {
 
-    public static Biome EXAMPLE_BIOME = (new Biome.Builder())
+    public static Biome THE_SAME_AS_PLAIN = (new Biome.Builder())
             .precipitation(Biome.Precipitation.RAIN)
                 .category(Biome.Category.NONE)
                 .temperature(0.8f)
